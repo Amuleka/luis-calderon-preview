@@ -1,4 +1,34 @@
 <!doctype html>
+<!--
+TODO — pending with Luis before launch
+  Confirmed (no longer pending): package prices; permission to name clients and people shown.
+
+  Still pending
+  1. 2025–2026 photos: send recent campaign work to replace / add to the case studies.
+  2. Photo of Luis: confirm assets/luis-calderon-*.jpg (from luiscalderonphoto.com/about) or send a newer on-set photo.
+  3. Form endpoint (GHL webhook): submit currently only shows the thank-you state.
+  4. Meta Pixel ID + GA4 Measurement ID (snippets in <head> are commented out).
+  5. Aviso de privacidad URL (LFPDPPP) — links point to #aviso.
+  6. WhatsApp number: set WHATSAPP_NUMBER in the script.
+
+  New — RETRATO EN PELÍCULA
+  7. Film portraits: high-res scans of real negatives (with film borders/edges if possible).
+     ALL 6 images in the gallery are TEMPORARY placeholders (data-film="unconfirmed"): nothing on luiscalderonphoto.com
+     (filenames, captions, page text) says they were shot on film and none show a film border.
+       N.º 01  LC_web_portrait_0041  (Portrait page)
+       N.º 02  LC_web_portrait_0021  (Portrait page)
+       N.º 03  LC_web_portrait_0034  (Portrait page)
+       N.º 04  LC_web_portrait_0030  (Portrait page)
+       N.º 05  LC_web_portrait_0020  (Portrait page)
+       N.º 06  LC_web_portrait_0001  (Portrait page)
+     Captions show only a plate number until Luis confirms each person's name and the format ("Película 35mm" / "Formato medio").
+  8. Cameras / formats list: the "Las cámaras" row is in the markup but hidden (remove `hidden` once confirmed).
+  9. What the negative package includes: number of images, digital scans yes/no, print + frame size, delivery time, license.
+  10. Confirm ad crops (1:1, 4:5, 9:16) and the 72-hour first selection before adding them to the page.
+
+  Offer note: the "Bono por tiempo limitado" box and the matching form checkbox hide automatically from
+  Dec 16, 2026 00:00 (Mexico City) via a JS date check; without JS they stay visible.
+-->
 <html lang="es-MX">
 <head>
 <meta charset="utf-8">
@@ -233,6 +263,80 @@ footer a:hover{border-bottom-color:currentColor}
 }
 
 
+/* ================= v9: RETRATO EN PELÍCULA ================= */
+[hidden]{display:none!important}
+.film{--paper:#F1EDE6;background:var(--paper)}
+.film .intro{display:grid;grid-template-columns:1.15fr 1fr;gap:clamp(28px,5vw,88px);align-items:end;margin-bottom:clamp(56px,8vw,120px)}
+.film h2{font-size:clamp(40px,4.4vw,68px);line-height:1.03;max-width:12.5em}
+.film .intro p{font-size:17px;max-width:30em}
+.gallery{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(12px,2vw,32px);row-gap:clamp(48px,7vw,112px);align-items:start}
+.print{background:#FBFAF7;padding:clamp(10px,1.3vw,20px);box-shadow:0 0 0 1px rgba(17,17,17,.08)}
+.print .frame{background:#e4dfd6}
+.gallery .cap{margin-top:14px}
+.g1{grid-column:1/6}
+.g2{grid-column:7/13;margin-top:clamp(64px,11vw,200px)}
+.g3{grid-column:2/9}
+.g4{grid-column:10/13;margin-top:clamp(40px,8vw,150px)}
+.g5{grid-column:1/5}
+.g6{grid-column:6/10;margin-top:clamp(40px,7vw,120px)}
+.cams{margin-top:clamp(56px,7vw,96px);display:flex;flex-wrap:wrap;gap:12px 28px;align-items:baseline;border-top:1px solid var(--line);padding-top:16px}
+.cams ul{list-style:none;display:flex;flex-wrap:wrap;gap:8px 28px}
+.cams li{font:500 11px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.fopts{display:grid;grid-template-columns:1fr 1fr;column-gap:clamp(32px,5vw,80px);margin-top:clamp(72px,9vw,136px);position:relative}
+.fopts::before{content:"";position:absolute;left:50%;top:0;bottom:0;width:1px;background:#d6d1c8}
+.fopt{position:relative;padding:clamp(28px,3vw,44px);display:flex;flex-direction:column}
+.fopt.feat{border:1px solid var(--ink)}
+.fopt .tag{position:absolute;top:0;left:clamp(28px,3vw,44px);transform:translateY(-50%);background:var(--paper);padding:0 10px;margin-left:-10px;font:500 11px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.fopt h3{font:500 clamp(30px,2.6vw,38px)/1.05 var(--serif);color:var(--ink);letter-spacing:-.01em}
+.fopt .price{margin:12px 0 22px;font-size:15px;color:var(--ink)}
+.fopt .price b{font-weight:600}
+.fopt ul{list-style:none;margin-bottom:28px;flex:1}
+.fopt li{padding:11px 0;border-top:1px solid #d6d1c8;font-size:15px}
+.fopt li:last-child{border-bottom:1px solid #d6d1c8}
+.fopt .btn{align-self:flex-start}
+
+/* ================= v9: CAMPAÑA LISTA PARA LANZAR (offer) ================= */
+.offer{background:#111;color:var(--on-dark)}
+.offer .sec-head{border-top-color:var(--on-dark)}
+.offer .label{color:var(--on-dark-muted)}
+.offer-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(36px,6vw,104px);align-items:start}
+.offer h2{font-size:clamp(40px,4.4vw,64px);line-height:1.04;color:#fff;max-width:12em}
+.o-price{margin-top:clamp(28px,3vw,40px);font-size:clamp(28px,2.6vw,38px);line-height:1.1;color:#fff}
+.o-price span{font:400 15px/1 var(--sans);color:var(--on-dark-muted);letter-spacing:0}
+.o-list{list-style:none;margin-top:14px}
+.o-list li{padding:15px 0;border-top:1px solid #3a3a38;font-size:16px;color:#e9e9e5}
+.o-list li:last-child{border-bottom:1px solid #3a3a38}
+.bonus{margin-top:clamp(56px,7vw,96px);border:1px solid rgba(255,255,255,.8);padding:clamp(20px,2.4vw,32px) clamp(20px,2.6vw,36px);font-size:17px;line-height:1.55;color:#fff}
+.bonus b{font-weight:600}
+.guar{margin-top:clamp(56px,7vw,96px)}
+.guar .cols{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #3a3a38;margin-top:14px}
+.guar .cols>div{padding:24px clamp(20px,3vw,44px) 0 0}
+.guar .cols>div+div{border-left:1px solid #3a3a38;padding-left:clamp(20px,3vw,44px)}
+.guar h3{font:500 clamp(24px,2vw,30px)/1.15 var(--serif);color:#fff;margin-bottom:8px}
+.guar p{color:#c9c9c5;font-size:15px;max-width:30em}
+.o-foot{margin-top:clamp(56px,7vw,96px);display:flex;justify-content:space-between;align-items:center;gap:20px 32px;flex-wrap:wrap;border-top:1px solid #3a3a38;padding-top:28px}
+.o-foot p{font-size:14px;color:var(--on-dark-muted)}
+.offer .btn{background:#fff;color:var(--ink);border-color:#fff}
+.offer .btn:hover{background:#e9e9e5}
+.svc-links{display:flex;flex-wrap:wrap;gap:14px 26px}
+
+@media (max-width:900px){
+  .film .intro,.offer-grid{grid-template-columns:1fr}
+  .fopts{grid-template-columns:1fr;row-gap:48px}
+  .fopts::before{display:none}
+}
+@media (max-width:600px){
+  .gallery{grid-template-columns:repeat(6,1fr);row-gap:40px;column-gap:10px}
+  .gallery>figure{margin-top:0}
+  .g1{grid-column:1/6}.g2{grid-column:1/7}.g3{grid-column:2/7}.g4{grid-column:1/5}.g5{grid-column:3/7}.g6{grid-column:1/6}
+  .print{padding:8px}
+  .fopt{padding:28px 20px}
+  .fopt .tag{left:20px}
+  .fopt .btn,.o-foot .btn{width:100%}
+  .guar .cols{grid-template-columns:1fr}
+  .guar .cols>div+div{border-left:0;border-top:1px solid #3a3a38;padding-left:0;margin-top:24px}
+}
+
 /* ---- editorial captions + frames (v8) ---- */
 .frame{position:relative;overflow:hidden;background:#ecebe7}
 .frame img{display:block}
@@ -292,7 +396,7 @@ footer a:hover{border-bottom-color:currentColor}
 /* divider lines draw left → right (border replaced by a scaled hairline, same position) */
 .js [data-reveal="rule"]{border-top-color:transparent;position:relative}
 .js [data-reveal="rule"]::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--ink);transform-origin:left;transition:transform calc(1.1s*var(--k)) var(--ease-io)}
-.js .process [data-reveal="rule"]::before{background:var(--on-dark)}
+.js .process [data-reveal="rule"]::before,.js .offer [data-reveal="rule"]::before{background:var(--on-dark)}
 .js [data-reveal="rule"].pre::before{transform:scaleX(0)}
 .js [data-reveal="case"]{border-top-color:transparent;position:relative}
 .js [data-reveal="case"]::before{content:"";position:absolute;left:0;right:0;top:-1px;height:1px;background:var(--line);transform-origin:left;transition:transform calc(1.1s*var(--k)) var(--ease-io)}
@@ -305,7 +409,7 @@ footer a:hover{border-bottom-color:currentColor}
 
 /* form: underline draws on focus; submit swaps with a fade */
 form>div:has(input,select,textarea){position:relative}
-form>div:has(input,select,textarea)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);pointer-events:none}
+form>div:not(.opts):has(input,select,textarea)::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;background:var(--ink);transform:scaleX(0);transform-origin:left;transition:transform .45s var(--ease);pointer-events:none}
 form>div:has(input:focus,select:focus,textarea:focus)::after{transform:scaleX(1)}
 form,.thanks{transition:opacity .5s ease,transform .5s var(--ease)}
 form.leaving{opacity:0;transform:translateY(-12px)}
@@ -325,6 +429,8 @@ form.leaving{opacity:0;transform:translateY(-12px)}
   .btn.ghost::before{background:var(--ink)}
   .btn.ghost:hover{background:transparent;color:#fff}
   .btn.ghost:hover::before{transform:scaleX(1);transform-origin:left}
+  .offer .btn::before{background:var(--ink)}
+  .offer .btn:hover{color:#fff;background:#fff}
   .tlink{position:relative;border-bottom-color:transparent}
   .tlink::after{content:"";position:absolute;left:0;right:0;bottom:-1px;height:1px;background:currentColor;transform-origin:right;transition:transform .3s var(--ease)}
   .tlink:hover{opacity:1}
@@ -448,11 +554,101 @@ form.leaving{opacity:0;transform:translateY(-12px)}
   </div>
 </section>
 
+<!-- 4b RETRATO EN PELÍCULA -->
+<section class="film" id="pelicula" aria-labelledby="film-title">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="rule"><span class="label">Retrato en película</span></div>
+    <div class="intro">
+      <h2 class="serif" id="film-title" data-reveal="lines">En la era de la IA, el negativo es prueba de que estuviste ahí.</h2>
+      <p data-reveal="up">Retratos hechos en película, revelados a mano y entregados como una pieza física enmarcada. Una imagen que no se puede generar, solo vivir.</p>
+    </div>
+    <!-- TODO: all gallery images are placeholders (data-film="unconfirmed") until Luis sends real film scans -->
+    <div class="gallery">
+      <figure class="g1" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:3/4"><picture>
+        <source type="image/webp" srcset="assets/film/portrait-0041-480.webp 480w, assets/film/portrait-0041-800.webp 800w, assets/film/portrait-0041-1200.webp 1200w" sizes="(max-width:600px) 72vw, 34vw">
+        <img src="assets/film/portrait-0041-800.jpg" width="1440" height="1920" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
+      </picture></div></div><figcaption class="cap"><span class="rl">N.º 01</span></figcaption></figure>
+      <figure class="g2" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:4/3"><picture>
+        <source type="image/webp" srcset="assets/film/portrait-0021-480.webp 480w, assets/film/portrait-0021-800.webp 800w, assets/film/portrait-0021-1200.webp 1200w" sizes="(max-width:600px) 100vw, 50vw">
+        <img src="assets/film/portrait-0021-800.jpg" width="1500" height="1125" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
+      </picture></div></div><figcaption class="cap"><span class="rl">N.º 02</span></figcaption></figure>
+      <figure class="g3" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:3/2"><picture>
+        <source type="image/webp" srcset="assets/film/portrait-0034-480.webp 480w, assets/film/portrait-0034-800.webp 800w, assets/film/portrait-0034-1200.webp 1200w" sizes="(max-width:600px) 100vw, 50vw">
+        <img src="assets/film/portrait-0034-800.jpg" width="1500" height="1001" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
+      </picture></div></div><figcaption class="cap"><span class="rl">N.º 03</span></figcaption></figure>
+      <figure class="g4" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:2/3"><picture>
+        <source type="image/webp" srcset="assets/film/portrait-0030-480.webp 480w, assets/film/portrait-0030-800.webp 800w, assets/film/portrait-0030-1200.webp 1200w" sizes="(max-width:600px) 72vw, 34vw">
+        <img src="assets/film/portrait-0030-800.jpg" width="1474" height="2208" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
+      </picture></div></div><figcaption class="cap"><span class="rl">N.º 04</span></figcaption></figure>
+      <figure class="g5" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:3/4"><picture>
+        <source type="image/webp" srcset="assets/film/portrait-0020-480.webp 480w, assets/film/portrait-0020-800.webp 800w, assets/film/portrait-0020-1200.webp 1200w" sizes="(max-width:600px) 72vw, 34vw">
+        <img src="assets/film/portrait-0020-800.jpg" width="1500" height="2000" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
+      </picture></div></div><figcaption class="cap"><span class="rl">N.º 05</span></figcaption></figure>
+      <figure class="g6" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:5/6"><picture>
+        <source type="image/webp" srcset="assets/film/portrait-0001-480.webp 480w, assets/film/portrait-0001-800.webp 800w, assets/film/portrait-0001-1200.webp 1200w" sizes="(max-width:600px) 72vw, 34vw">
+        <img src="assets/film/portrait-0001-800.jpg" width="1266" height="1525" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
+      </picture></div></div><figcaption class="cap"><span class="rl">N.º 06</span></figcaption></figure>
+    </div>
+    <!-- TODO: cameras/formats not confirmed yet — remove `hidden` when Luis confirms the list -->
+    <div class="cams" hidden><span class="label">Las cámaras</span><ul><li>35mm · modelo por confirmar</li><li>Formato medio · modelo por confirmar</li></ul></div>
+    <div class="fopts" data-reveal="up">
+      <div class="fopt">
+        <h3>Retrato digital</h3>
+        <p class="price">Desde <b>$9,500 MXN</b> + IVA</p>
+        <ul><li>Media jornada con dirección editorial</li><li>Hasta 2 looks o sets</li><li>12 imágenes finales retocadas</li></ul>
+        <a class="btn ghost" href="#cotizar" data-tipo="Retrato digital" data-cta="film-digital">Cotizar</a>
+      </div>
+      <div class="fopt feat">
+        <span class="tag">Edición especial</span>
+        <h3>Retrato en negativo</h3>
+        <p class="price">Desde <b>$18,000 MXN</b> + IVA</p>
+        <ul><li>Sesión en película</li><li>Revelado y escaneo</li><li>1 impresión física enmarcada</li></ul>
+        <a class="btn" href="#cotizar" data-tipo="Retrato en negativo" data-cta="film-negativo">Cotizar</a>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- 5 CTA BAND -->
 <section class="band" aria-label="Cotizar">
   <div class="wrap">
     <p class="serif" data-reveal="lines">¿Tu marca es la siguiente?</p>
     <a class="btn" href="#cotizar" data-cta="band" data-reveal="up">Cotizar proyecto</a>
+  </div>
+</section>
+
+<!-- 5b CAMPAÑA LISTA PARA LANZAR (offer) -->
+<section class="offer" id="campana" aria-labelledby="offer-title">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="rule"><span class="label">Campaña lista para lanzar</span></div>
+    <div class="offer-grid">
+      <div>
+        <h2 class="serif" id="offer-title" data-reveal="lines">Todo lo que tu marca necesita para lanzar, en una sola producción.</h2>
+        <p class="o-price serif" data-reveal="up">Desde $45,000 MXN <span>+ IVA</span></p>
+      </div>
+      <div data-reveal="up">
+        <span class="label">Incluye</span>
+        <ul class="o-list">
+          <li>Preproducción, moodboard y plan de tomas</li>
+          <li>1 día de producción, hasta 8 horas</li>
+          <li>20 imágenes finales retocadas por Luis</li>
+          <li>Licencia de uso libre por 12 meses</li>
+          <li>Imágenes adicionales con 30% de descuento</li>
+        </ul>
+      </div>
+    </div>
+    <p class="bonus" data-bonus data-reveal="up"><b>Bono por tiempo limitado:</b> aparta tu producción de enero a marzo 2027 antes del 15 de diciembre y el video de backstage para redes va por mi cuenta.</p>
+    <div class="guar" data-reveal="up">
+      <span class="label">Doble garantía</span>
+      <div class="cols">
+        <div><h3>Entrega a tiempo</h3><p>Si no entrego en la fecha acordada, 10% de descuento.</p></div>
+        <div><h3>Satisfacción</h3><p>Si las imágenes no cumplen el brief y moodboard aprobados, repetimos la toma sin costo.</p></div>
+      </div>
+    </div>
+    <div class="o-foot" data-reveal="up">
+      <p>Solo produzco 10 campañas al mes para dar a cada marca dirección completa.</p>
+      <a class="btn" href="#cotizar" data-tipo="Campaña" data-cta="offer">Apartar fecha</a>
+    </div>
   </div>
 </section>
 
@@ -465,7 +661,7 @@ form.leaving{opacity:0;transform:translateY(-12px)}
         <span class="label">01</span>
         <h3>Campaña de marca</h3>
         <p class="price">Desde <b>$45,000 MXN</b></p>
-        <ul><li>Preproducción y moodboard</li><li>1 día de foto, hasta 8 horas</li><li>20 imágenes finales retocadas</li></ul>
+        <ul><li>Preproducción y moodboard</li><li>1 día de foto, hasta 8 horas</li><li>20 imágenes finales retocadas por Luis</li><li>Licencia de uso libre 12 meses</li></ul>
         <a class="tlink" href="#cotizar" data-tipo="Campaña" data-cta="svc-campana">Cotizar</a>
       </div>
       <div class="svc">
@@ -477,10 +673,10 @@ form.leaving{opacity:0;transform:translateY(-12px)}
       </div>
       <div class="svc">
         <span class="label">03</span>
-        <h3>Retrato editorial</h3>
+        <h3>Retrato editorial · digital o en película</h3>
         <p class="price">Desde <b>$9,500 MXN</b></p>
         <ul><li>Media jornada con dirección editorial</li><li>Hasta 2 looks o sets</li><li>12 imágenes finales retocadas</li></ul>
-        <a class="tlink" href="#cotizar" data-tipo="Retrato editorial" data-cta="svc-retrato">Cotizar</a>
+        <div class="svc-links"><a class="tlink" href="#cotizar" data-tipo="Retrato digital" data-cta="svc-retrato">Cotizar</a><a class="tlink" href="#pelicula" data-cta="svc-pelicula">Ver retrato en película →</a></div>
       </div>
     </div>
     <p class="note" data-reveal="up">Precios + IVA. Licencia de uso incluida.</p>
@@ -525,7 +721,8 @@ form.leaving{opacity:0;transform:translateY(-12px)}
             <input type="radio" name="tipo" id="t1" value="Campaña" required><label for="t1">Campaña</label>
             <input type="radio" name="tipo" id="t2" value="Producto"><label for="t2">Producto</label>
             <input type="radio" name="tipo" id="t3" value="Contenido mensual"><label for="t3">Contenido mensual</label>
-            <input type="radio" name="tipo" id="t4" value="Retrato editorial"><label for="t4">Retrato editorial</label>
+            <input type="radio" name="tipo" id="t4" value="Retrato digital"><label for="t4">Retrato digital</label>
+            <input type="radio" name="tipo" id="t6" value="Retrato en negativo"><label for="t6">Retrato en negativo</label>
             <input type="radio" name="tipo" id="t5" value="Otro"><label for="t5">Otro</label>
           </div>
         </fieldset>
@@ -554,6 +751,7 @@ form.leaving{opacity:0;transform:translateY(-12px)}
             <option>Lo antes posible</option><option>En 1 mes</option><option>En 2–3 meses</option><option>Solo estoy explorando</option>
           </select>
         </div>
+        <div class="full opts" data-bonus><input type="checkbox" name="bono" id="f-bono" value="Enero–marzo 2027 (bono video backstage)"><label for="f-bono">Quiero apartar fecha enero–marzo 2027 (bono video backstage)</label></div>
         <div class="full"><label for="f-msg">Cuéntame del proyecto <span class="opt">(opcional)</span></label><textarea id="f-msg" name="mensaje" placeholder="Producto o colección, referencias, link a tu web o Instagram…"></textarea></div>
         <div class="full submit-row">
           <button class="btn" type="submit">Cotizar proyecto</button>
@@ -606,6 +804,9 @@ document.querySelectorAll('.js-wa').forEach(a => {
   a.href = waUrl(); a.target = '_blank'; a.rel = 'noopener';
   a.addEventListener('click', () => track('contact', {location: a.dataset.cta}));
 });
+
+// limited-time bonus: hide box + form checkbox after Dec 15, 2026 (Mexico City). Visible by default without JS.
+if (Date.now() >= Date.parse('2026-12-16T00:00:00-06:00')) document.querySelectorAll('[data-bonus]').forEach(el => { el.hidden = true; });
 
 // service "Cotizar" links pre-select the project type
 document.querySelectorAll('[data-tipo]').forEach(a => a.addEventListener('click', () => {
