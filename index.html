@@ -219,7 +219,6 @@ footer a:hover{border-bottom-color:currentColor}
   .big .frame{aspect-ratio:4/3}
   .smalls{grid-template-columns:1fr 1fr}
   .smalls figure:nth-child(3){display:none}
-  .pgrid{grid-template-columns:repeat(2,1fr)}
   .band .btn{width:100%}
   .steps{grid-template-columns:1fr}
   form{grid-template-columns:1fr}
@@ -250,11 +249,6 @@ footer a:hover{border-bottom-color:currentColor}
   /* desktop parallax room for large images (±3%) */
   .big .frame img{position:relative;height:106%;top:-3%}
 }
-.portraits{margin-top:clamp(72px,9vw,120px)}
-.pgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:clamp(8px,1vw,14px) clamp(8px,1vw,14px);row-gap:28px}
-.pgrid .frame{aspect-ratio:4/5}
-@media (max-width:900px){.pgrid{grid-template-columns:repeat(3,1fr)}}
-@media (max-width:600px){.pgrid{grid-template-columns:repeat(2,1fr)}}
 
 /* ================= MOTION (v8) — transform / opacity only =================
    Hidden start states apply only under html.js; without JS the page renders complete. */
@@ -451,18 +445,6 @@ form.leaving{opacity:0;transform:translateY(-12px)}
       </div>
     </article>
 
-    <!-- PORTRAITS STRIP: only names confirmed by filename + Quién 50 credit -->
-    <div class="portraits">
-      <div class="sec-head" data-reveal="rule"><span class="label">Retratos</span><span class="label">Rostros frente a la cámara de Luis</span></div>
-      <div class="pgrid">
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/db462852-3690-4e69-ae50-303768381217/2209_Quien50_23_Isaac_Hernandez_1652.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/db462852-3690-4e69-ae50-303768381217/2209_Quien50_23_Isaac_Hernandez_1652.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/db462852-3690-4e69-ae50-303768381217/2209_Quien50_23_Isaac_Hernandez_1652.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/db462852-3690-4e69-ae50-303768381217/2209_Quien50_23_Isaac_Hernandez_1652.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 16vw" alt="Retrato de Isaac Hernández por Luis Calderón para Quién 50"></div><figcaption class="cap"><span class="nm">Isaac Hernández</span><span class="rl">Bailarín · Quién 50</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/ac348713-bd7a-4387-9fa4-7fc418e05e52/2209_Quien50_17_Juan_Pablo_Medina_1316.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/ac348713-bd7a-4387-9fa4-7fc418e05e52/2209_Quien50_17_Juan_Pablo_Medina_1316.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/ac348713-bd7a-4387-9fa4-7fc418e05e52/2209_Quien50_17_Juan_Pablo_Medina_1316.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/ac348713-bd7a-4387-9fa4-7fc418e05e52/2209_Quien50_17_Juan_Pablo_Medina_1316.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 16vw" alt="Retrato de Juan Pablo Medina por Luis Calderón para Quién 50"></div><figcaption class="cap"><span class="nm">Juan Pablo Medina</span><span class="rl">Actor · Quién 50</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/446216f3-04c8-4a8c-b90d-62cd18b09541/2209_Quien50_30_Itari_Marta_2153.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/446216f3-04c8-4a8c-b90d-62cd18b09541/2209_Quien50_30_Itari_Marta_2153.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/446216f3-04c8-4a8c-b90d-62cd18b09541/2209_Quien50_30_Itari_Marta_2153.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/446216f3-04c8-4a8c-b90d-62cd18b09541/2209_Quien50_30_Itari_Marta_2153.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 16vw" alt="Retrato de Itari Marta por Luis Calderón para Quién 50"></div><figcaption class="cap"><span class="nm">Itari Marta</span><span class="rl">Actriz · Quién 50</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/14aaaeb4-fad0-401e-8695-76159c332fce/2209_Quien50_05_HUGO_D%27ACOSTA_0485.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/14aaaeb4-fad0-401e-8695-76159c332fce/2209_Quien50_05_HUGO_D%27ACOSTA_0485.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/14aaaeb4-fad0-401e-8695-76159c332fce/2209_Quien50_05_HUGO_D%27ACOSTA_0485.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/14aaaeb4-fad0-401e-8695-76159c332fce/2209_Quien50_05_HUGO_D%27ACOSTA_0485.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 16vw" alt="Retrato de Hugo D’Acosta por Luis Calderón para Quién 50"></div><figcaption class="cap"><span class="nm">Hugo D’Acosta</span><span class="rl">Enólogo · Quién 50</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/2c9957e9-687c-4d66-a161-3b457ada41a5/2209_Quien50_36_Sashenka_Gutierrez_2619.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/2c9957e9-687c-4d66-a161-3b457ada41a5/2209_Quien50_36_Sashenka_Gutierrez_2619.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/2c9957e9-687c-4d66-a161-3b457ada41a5/2209_Quien50_36_Sashenka_Gutierrez_2619.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/2c9957e9-687c-4d66-a161-3b457ada41a5/2209_Quien50_36_Sashenka_Gutierrez_2619.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 16vw" alt="Retrato de Sáshenka Gutiérrez por Luis Calderón para Quién 50"></div><figcaption class="cap"><span class="nm">Sáshenka Gutiérrez</span><span class="rl">Quién 50 · 2022</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/495eb8bf-b890-43a4-8132-0a47243b230d/2209_Quien50_33_Ricardo_Amper_2426.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/495eb8bf-b890-43a4-8132-0a47243b230d/2209_Quien50_33_Ricardo_Amper_2426.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/495eb8bf-b890-43a4-8132-0a47243b230d/2209_Quien50_33_Ricardo_Amper_2426.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/495eb8bf-b890-43a4-8132-0a47243b230d/2209_Quien50_33_Ricardo_Amper_2426.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 16vw" alt="Retrato de Ricardo Amper por Luis Calderón para Quién 50"></div><figcaption class="cap"><span class="nm">Ricardo Amper</span><span class="rl">Quién 50 · 2022</span></figcaption></figure>
-      </div>
-    </div>
   </div>
 </section>
 
@@ -654,7 +636,7 @@ document.querySelectorAll('[data-reveal="lines"]').forEach(h => {
 });
 // stagger indexes
 document.querySelectorAll('[data-reveal="stagger"],[data-reveal="logos"] ul').forEach(p => [...p.children].forEach((c, i) => c.style.setProperty('--i', i)));
-document.querySelectorAll('.smalls,.pgrid').forEach(p => [...p.children].forEach((c, i) => c.style.setProperty('--i', i)));
+document.querySelectorAll('.smalls').forEach(p => [...p.children].forEach((c, i) => c.style.setProperty('--i', i)));
 
 function show(el){
   const tgt = (el.dataset.reveal === 'img' && el.querySelector('.frame')) || el; tgt.style.willChange = 'transform, opacity';
