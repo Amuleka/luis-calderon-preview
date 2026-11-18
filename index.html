@@ -321,9 +321,6 @@ form.leaving{opacity:0;transform:translateY(-12px)}
 @media (hover:hover) and (pointer:fine){
   .frame::after{content:"";position:absolute;inset:0;background:#000;opacity:0;transition:opacity .6s var(--ease);pointer-events:none}
   figure:hover .frame::after{opacity:.04}
-  .done .cap{transition:opacity .6s var(--ease),transform .6s var(--ease)}
-  .done .cap{opacity:.88;transform:translateY(6px)}
-  figure:hover .cap{opacity:1;transform:none}
   .btn{position:relative;overflow:hidden;isolation:isolate}
   .btn::before{content:"";position:absolute;inset:0;background:#fff;transform:scaleX(0);transform-origin:right;transition:transform .3s var(--ease);z-index:-1}
   .btn:not(.ghost):hover{background:var(--ink)}
