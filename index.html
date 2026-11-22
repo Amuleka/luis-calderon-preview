@@ -41,7 +41,7 @@ TODO — pending with Luis before launch
 <link rel="preconnect" href="https://images.squarespace-cdn.com">
 <!-- hero image preload (LCP) — self-hosted WebP -->
 <link rel="preload" as="image" type="image/webp" media="(max-width:600px)" imagesrcset="assets/hero/hero-mobile-omar-750.webp 750w, assets/hero/hero-mobile-omar-1000.webp 1000w, assets/hero/hero-mobile-omar-1200.webp 1200w" imagesizes="100vw" fetchpriority="high">
-<link rel="preload" as="image" type="image/webp" media="(min-width:601px)" imagesrcset="assets/hero/hero-desktop-1000.webp 1000w, assets/hero/hero-desktop-1500.webp 1472w" imagesizes="100vw" fetchpriority="high">
+<link rel="preload" as="image" type="image/webp" media="(min-width:601px)" imagesrcset="assets/hero/hero-desktop-bronco-1000.webp 1000w, assets/hero/hero-desktop-bronco-1500.webp 1500w, assets/hero/hero-desktop-bronco-2000.webp 2000w, assets/hero/hero-desktop-bronco-2560.webp 2560w" imagesizes="100vw" fetchpriority="high">
 <!-- fonts: non-render-blocking -->
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500;600&display=swap" media="print" onload="this.media='all'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;1,500&family=Inter:wght@400;500;600&display=swap"></noscript>
@@ -477,6 +477,11 @@ section{padding:clamp(64px,8vw,112px) 0}
 .tabs button:focus{outline:none}
 .tabs button:focus-visible{outline:1px solid var(--ink);outline-offset:6px}
 
+
+/* v15b: Bronco desktop hero */
+@media (min-width:601px){.hero .copy::before{background:radial-gradient(ellipse at 60% 65%,rgba(0,0,0,.6),rgba(0,0,0,0) 70%)}}
+@media (min-width:601px){.hero img{object-position:35% 45%}}
+
 /* ---- editorial captions + frames (v8) ---- */
 .frame{position:relative;overflow:hidden;background:#ecebe7}
 .frame img{display:block}
@@ -601,8 +606,8 @@ form.leaving{opacity:0;transform:translateY(-12px)}
     <!-- mobile: portrait crop of a 4:3 image → rendered ~1.9× viewport width -->
     <source media="(max-width:600px)" type="image/webp" srcset="assets/hero/hero-mobile-omar-750.webp 750w, assets/hero/hero-mobile-omar-1000.webp 1000w, assets/hero/hero-mobile-omar-1200.webp 1200w" sizes="100vw">
     <source media="(max-width:600px)" srcset="assets/hero/hero-mobile-omar-750.jpg 750w, assets/hero/hero-mobile-omar-1000.jpg 1000w, assets/hero/hero-mobile-omar-1200.jpg 1200w" sizes="100vw">
-    <source type="image/webp" srcset="assets/hero/hero-desktop-1000.webp 1000w, assets/hero/hero-desktop-1500.webp 1472w" sizes="100vw">
-    <img src="assets/hero/hero-desktop-1500.jpg" srcset="assets/hero/hero-desktop-1000.jpg 1000w, assets/hero/hero-desktop-1500.jpg 1472w" sizes="100vw" width="1472" height="982" alt="Fotografía de Luis Calderón: campaña Gatorade 30 y retrato de Omar Chaparro para Life &amp; Style" fetchpriority="high" decoding="async">
+    <source type="image/webp" srcset="assets/hero/hero-desktop-bronco-1000.webp 1000w, assets/hero/hero-desktop-bronco-1500.webp 1500w, assets/hero/hero-desktop-bronco-2000.webp 2000w, assets/hero/hero-desktop-bronco-2560.webp 2560w" sizes="100vw">
+    <img src="assets/hero/hero-desktop-bronco-1500.jpg" srcset="assets/hero/hero-desktop-bronco-1000.jpg 1000w, assets/hero/hero-desktop-bronco-1500.jpg 1500w, assets/hero/hero-desktop-bronco-2000.jpg 2000w, assets/hero/hero-desktop-bronco-2560.jpg 2560w" sizes="100vw" width="2000" height="1333" alt="Fotografía de campaña por Luis Calderón: Diego Alfaro junto a una camioneta Bronco para Life &amp; Style; en celular, retrato de Omar Chaparro para Life &amp; Style" fetchpriority="high" decoding="async">
   </picture>
   <div class="fade-top" aria-hidden="true"></div>
   <div class="copy">
@@ -610,7 +615,7 @@ form.leaving{opacity:0;transform:translateY(-12px)}
     <h1 class="serif"><span class="ln"><span>Fotografía real para</span></span> <span class="ln"><span>tu próxima <em>campaña.</em></span></span></h1>
     <a class="btn" href="#cotizar" data-cta="hero">Cotizar proyecto</a>
   </div>
-  <p class="credit"><span class="cd">Gatorade 30, 2021</span><span class="cm">Omar Chaparro · Life &amp; Style</span></p>
+  <p class="credit"><span class="cd">Diego Alfaro · Life &amp; Style</span><span class="cm">Omar Chaparro · Life &amp; Style</span></p>
 </section>
 
 <!-- 2 MARQUEE: brands -->
