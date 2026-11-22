@@ -362,6 +362,27 @@ footer a:hover{border-bottom-color:currentColor}
   .p-l{grid-column:1/7}.p-s{grid-column:2/7}.p-l2{grid-column:1/7}.p-s2{grid-column:1/6}
 }
 
+
+/* ================= v11: testimonios + film manifesto ================= */
+.testi{border-top:1px solid var(--line)}
+.t-feat{max-width:1080px;margin:0 0 clamp(64px,8vw,120px)}
+.t-feat blockquote{font-size:clamp(26px,2.6vw,40px);line-height:1.25;font-weight:400;color:var(--ink)}
+.t-feat figcaption{margin-top:clamp(24px,3vw,36px)}
+.t-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(40px,5vw,72px) clamp(24px,3vw,48px);border-top:1px solid var(--line);padding-top:clamp(36px,4vw,56px)}
+.t-item blockquote{font:400 16px/1.65 var(--sans);color:var(--body)}
+.t-item figcaption{margin-top:22px}
+.sig{display:flex;align-items:center;gap:14px}
+.sig .mono{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;font:500 15px/1 var(--serif);letter-spacing:.04em;color:var(--ink)}
+.sig .nm{display:block;font:500 18px/1.2 var(--serif);color:var(--ink)}
+.sig .rl{display:block;margin-top:3px;font:500 10px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.manifesto{display:grid;grid-template-columns:1fr 1fr;gap:clamp(28px,5vw,88px);align-items:start;margin:0 0 clamp(64px,9vw,136px);border-top:1px solid #d6d1c8;padding-top:clamp(36px,4vw,56px)}
+.manifesto blockquote{font-size:clamp(32px,3.4vw,52px);line-height:1.1;font-weight:400;color:var(--ink);font-style:italic}
+.manifesto cite{display:block;margin-top:18px;font:500 11px/1.4 var(--sans);letter-spacing:.16em;text-transform:uppercase;font-style:normal;color:var(--muted)}
+.m-text p{font-size:16px;max-width:34em;margin-bottom:14px}
+.m-sign{margin-top:22px}
+@media (max-width:900px){.t-grid{grid-template-columns:1fr 1fr}.manifesto{grid-template-columns:1fr}}
+@media (max-width:600px){.t-grid{grid-template-columns:1fr}}
+
 /* ---- editorial captions + frames (v8) ---- */
 .frame{position:relative;overflow:hidden;background:#ecebe7}
 .frame img{display:block}
@@ -654,13 +675,38 @@ form.leaving{opacity:0;transform:translateY(-12px)}
   </div>
 </section>
 
-<!-- 4c RETRATO EN PELÍCULA -->
+<!-- 4c TESTIMONIOS -->
+<section class="testi" id="testimonios" aria-labelledby="testi-title">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="rule"><span class="label" id="testi-title">Testimonios</span><span class="label">Quienes han trabajado con Luis</span></div>
+    <figure class="t-feat" data-reveal="up"><blockquote class="serif">“Conozco el trabajo de Luis Calderón desde 2022, antes de comenzar a coordinar el equipo de fotografía de Amazon Studio México, en 2025. Su experiencia y atención al detalle siempre han llamado mi atención. Es un fotógrafo versátil, capaz de lograr excelentes resultados en still, moda, editorial y video. Se distingue por entregar trabajos de gran calidad, combinando creatividad y dinamismo, incluso en situaciones complejas.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">IV</span><span><span class="nm">Iván Volpe</span><span class="rl">Photo Studio Manager · Amazon Studio México</span></span></div></figcaption></figure>
+    <div class="t-grid" data-reveal="stagger">
+      <figure class="t-item"><blockquote>“Conozco a Luis desde hace muchos años, desde que coincidíamos en diferentes catálogos de moda, y siempre me ha gustado mucho su trabajo. Hace poco hice unas fotos con él para mi book y fue una gran experiencia. Me gusta mucho su creatividad y la confianza que te transmite frente a la cámara.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">LS</span><span><span class="nm">Leti Santos</span><span class="rl">Figura pública</span></span></div></figcaption></figure>
+      <figure class="t-item"><blockquote>“Si tuviera que definir el trabajo de Luis Calderón en una palabra, sería impecable. Su mirada combina sensibilidad, dominio técnico y una elegancia que trasciende lo estético. Trabajar con él es siempre un placer: todo fluye y los clientes quedan felices.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">GT</span><span><span class="nm">Gaby Tort</span><span class="rl">Productora · Colectivo Conejo Feroz</span></span></div></figcaption></figure>
+      <figure class="t-item"><blockquote>“Es un fotógrafo con muchísimo talento y, sobre todo, con una sensibilidad muy especial. Tiene una mirada propia, sabe escuchar, entiende las ideas y siempre encuentra la manera de aportar algo interesante desde su perspectiva.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">XC</span><span><span class="nm">Ximena Cortina</span><span class="rl">Directora de Marca y Growth</span></span></div></figcaption></figure>
+      <figure class="t-item"><blockquote>“He colaborado con Luis desde hace más de 5 años y mi experiencia siempre ha sido muy grata. Es muy profesional y talentoso, además de que siempre tiene una gran actitud.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">RR</span><span><span class="nm">Renata Rojo Uribe</span><span class="rl">Executive Producer</span></span></div></figcaption></figure>
+      <figure class="t-item"><blockquote>“Luis es un fotógrafo de gran nivel con quien he colaborado en proyectos para clientes importantes. Su trabajo es impecable, con una propuesta sólida y un excelente manejo de la luz. Además, es un gran ser humano y muy responsable. Lo recomiendo totalmente.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">JC</span><span><span class="nm">José Carlos Muñoz</span><span class="rl">Diseñador de imagen y maquillista · 28 años de experiencia</span></span></div></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<!-- 4d RETRATO EN PELÍCULA -->
 <section class="film" id="pelicula" aria-labelledby="film-title">
   <div class="wrap">
     <div class="sec-head" data-reveal="rule"><span class="label">Retrato en película</span></div>
     <div class="intro">
       <h2 class="serif" id="film-title" data-reveal="lines">En la era de la IA, el negativo es prueba de que estuviste ahí.</h2>
       <p data-reveal="up">Retratos hechos en película, revelados a mano y entregados como una pieza física enmarcada. Una imagen que no se puede generar, solo vivir.</p>
+    </div>
+    <div class="manifesto" data-reveal="up">
+      <blockquote class="serif">“El color es descriptivo. El blanco y negro es interpretativo.”<cite>Elliott Erwitt</cite></blockquote>
+      <div class="m-text">
+        <p>El retrato, a lo largo de la historia, nos ha ayudado a comprender de dónde venimos. Es un documento: una mirada al pasado.</p>
+        <p>Es mi deseo que a través de él podamos asomarnos a lo que fuimos para inspirarnos a ser lo que queremos. El retrato nos permite reflexionar de lo exterior a lo interior, y por eso es tan importante mantener esta práctica desde lo más tangible. Fotografía significa pintar con luz.</p>
+        <p>En estos retratos usamos el negativo como base para hacerlos permanentes, invaluables, inamovibles. Y son en blanco y negro por esa razón.</p>
+        <p>Ofrezco este servicio para contemplar a través del tiempo nuestra mirada, lo que somos hoy, para poder compartirlo mañana.</p>
+        <p class="label m-sign">Luis Calderón</p>
+      </div>
     </div>
     <!-- TODO: all gallery images are placeholders (data-film="unconfirmed") until Luis sends real film scans -->
     <div class="gallery">
