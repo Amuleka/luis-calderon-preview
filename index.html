@@ -383,6 +383,78 @@ footer a:hover{border-bottom-color:currentColor}
 @media (max-width:900px){.t-grid{grid-template-columns:1fr 1fr}.manifesto{grid-template-columns:1fr}}
 @media (max-width:600px){.t-grid{grid-template-columns:1fr}}
 
+
+/* ================= v12: compact persuasion flow (Gabrielle structure, brand version) ================= */
+section{padding:clamp(64px,8vw,112px) 0}
+.hero{padding:0}
+.marq{padding:22px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden}
+.marq-track{display:flex;width:max-content;animation:marq 38s linear infinite}
+.marq ul{list-style:none;display:flex;align-items:center;gap:clamp(48px,7vw,110px);padding-right:clamp(48px,7vw,110px)}
+.marq li{display:flex;align-items:center;height:36px}
+.marq img{width:auto;height:var(--h,30px);background:none;object-fit:contain;filter:brightness(0);opacity:.65}
+@keyframes marq{to{transform:translateX(-50%)}}
+.statement{background:#111;color:#fff;padding:clamp(72px,10vw,140px) 0;text-align:center}
+.statement p{font-size:clamp(34px,4vw,60px);line-height:1.08;font-weight:400;color:#fff;max-width:16em;margin:0 auto 34px}
+.statement em{font-style:italic}
+.statement .tlink{color:#fff;border-color:#fff}
+.brands{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(12px,2vw,28px)}
+.brands .frame{aspect-ratio:4/5}
+.folio2{margin-top:clamp(56px,7vw,96px)}
+.tabs{display:flex;gap:clamp(20px,3vw,40px);border-bottom:1px solid var(--line);margin-bottom:clamp(24px,3vw,36px)}
+.tabs button{background:none;border:0;padding:0 0 12px;margin-bottom:-1px;border-bottom:1px solid transparent;font:500 12px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--muted);cursor:pointer}
+.tabs button[aria-selected=true]{color:var(--ink);border-bottom-color:var(--ink)}
+.pan{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,20px)}
+.pan .frame{aspect-ratio:4/5}
+.pan figure{animation:fadeIn .6s ease both}
+.steps2{list-style:none;display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(16px,2.4vw,36px)}
+.steps2 li{border-top:1px solid var(--ink);padding-top:16px}
+.steps2 .n{font:400 30px/1 var(--serif);font-style:italic;color:var(--muted)}
+.steps2 h3{font:500 18px/1.2 var(--sans);color:var(--ink);margin:12px 0 6px}
+.steps2 p{font-size:15px;color:var(--muted)}
+.promise{background:#F1EDE6;padding:clamp(56px,7vw,96px) 0}
+.pcols{display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,5vw,80px);margin-top:18px}
+.pcols h3{font-size:clamp(28px,2.6vw,40px);font-weight:400;margin-bottom:6px}
+.pcols p{font-size:15px;max-width:28em}
+.tslider{text-align:center}
+.tslider .track{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;margin-top:28px;outline:0}
+.tslider .track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 100%;scroll-snap-align:center;padding:0 clamp(0px,6vw,120px);display:flex;flex-direction:column;align-items:center}
+.slide blockquote{font-size:clamp(24px,2.4vw,36px);line-height:1.3;font-weight:400;color:var(--ink);max-width:24em}
+.slide .sig{margin-top:28px;text-align:left}
+.sig{display:flex;align-items:center;gap:14px}
+.sig .mono{flex:none;width:44px;height:44px;border-radius:50%;border:1px solid var(--ink);display:grid;place-items:center;font:500 15px/1 var(--serif);color:var(--ink)}
+.sig .nm{display:block;font:500 18px/1.2 var(--serif);color:var(--ink)}
+.sig .rl{display:block;margin-top:3px;font:500 10px/1.4 var(--sans);letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.tnav{display:flex;justify-content:center;align-items:center;gap:22px;margin-top:36px}
+.tnav>button{background:none;border:1px solid var(--ink);width:44px;height:44px;border-radius:50%;font-size:16px;cursor:pointer;color:var(--ink);transition:background .3s,color .3s}
+.tnav>button:hover{background:var(--ink);color:#fff}
+.dots{display:flex;gap:10px}
+.dots button{width:22px;height:2px;padding:0;border:0;background:var(--line);cursor:pointer;transition:background .3s,width .3s}
+.dots button[aria-current=true]{background:var(--ink);width:40px}
+.invest{border-top:1px solid var(--line)}
+.icols{display:grid;grid-template-columns:1.2fr 1fr 1fr;border-top:1px solid var(--line)}
+.ic{position:relative;padding:32px clamp(18px,2.4vw,36px);border-left:1px solid var(--line);display:flex;flex-direction:column}
+.ic:first-child{border-left:0}
+.ic.feat{border:1px solid var(--ink);margin-top:-1px}
+.ic .tag{position:absolute;top:0;left:clamp(18px,2.4vw,36px);transform:translateY(-50%);background:var(--bg);padding:0 10px;margin-left:-10px;font:500 10px/1 var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--ink)}
+.ic h3{font-size:clamp(28px,2.4vw,36px);font-weight:400;line-height:1.05}
+.ic .price{margin:10px 0 18px;font-size:14px;color:var(--ink)}
+.ic .price b{font-weight:600}
+.ic ul{list-style:none;flex:1;margin-bottom:24px}
+.ic li{padding:9px 0;border-top:1px solid var(--line);font-size:14px}
+.ic .btn,.ic .tlink{align-self:flex-start}
+.bonus2{margin-top:32px;font-size:14px;color:var(--ink)}
+.scarce{margin-top:6px;font-size:13px;color:var(--muted)}
+.filmnote{background:#F1EDE6}
+.fn{display:grid;grid-template-columns:1fr 1.4fr;gap:clamp(28px,6vw,96px);align-items:center}
+.fn .frame{aspect-ratio:3/4;max-width:420px}
+.fn blockquote{font-size:clamp(30px,3vw,46px);line-height:1.12;font-style:italic;font-weight:400;color:var(--ink);margin:14px 0 10px}
+.fn .cite{margin-bottom:22px}
+.fn p{max-width:30em;font-size:15px;margin-bottom:12px}
+@media (max-width:900px){.steps2{grid-template-columns:1fr 1fr;row-gap:28px}.icols{grid-template-columns:1fr}.ic,.ic:first-child{border-left:0;border-top:1px solid var(--line)}.ic.feat{margin:16px 0}.fn{grid-template-columns:1fr}}
+@media (max-width:600px){.brands{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;gap:12px;margin:0 calc(var(--pad)*-1);padding:0 var(--pad);scrollbar-width:none}.brands figure{flex:0 0 72%;scroll-snap-align:start}.pan{grid-template-columns:1fr 1fr}.pcols{grid-template-columns:1fr}.steps2{grid-template-columns:1fr}.ic .btn{width:100%}.slide{padding:0 4px}.marq img{height:calc(var(--h,30px)*.75)}}
+@media (prefers-reduced-motion:reduce){.marq-track{animation:none}}
+
 /* ---- editorial captions + frames (v8) ---- */
 .frame{position:relative;overflow:hidden;background:#ecebe7}
 .frame img{display:block}
@@ -519,7 +591,26 @@ form.leaving{opacity:0;transform:translateY(-12px)}
   <p class="credit">Gatorade 30, 2021</p>
 </section>
 
-<!-- 2 ABOUT -->
+<!-- 2 MARQUEE: brands -->
+<section class="marq" aria-label="Marcas con las que ha trabajado Luis">
+  <div class="marq-track"><ul>
+      <li><img src="assets/logos/liverpool.svg" width="121" height="28" loading="lazy" decoding="async" alt="Liverpool" style="--h:28px"></li>
+      <li><img src="assets/logos/gatorade.svg" width="148" height="30" loading="lazy" decoding="async" alt="Gatorade" style="--h:30px"></li>
+      <li><img src="assets/logos/jose-cuervo.svg" width="80" height="34" loading="lazy" decoding="async" alt="José Cuervo" style="--h:34px"></li>
+      <li><img src="assets/logos/forbes-mexico.svg" width="106" height="32" loading="lazy" decoding="async" alt="Forbes México" style="--h:32px"></li>
+      <li><img src="assets/logos/quien.svg" width="76" height="32" loading="lazy" decoding="async" alt="Quién" style="--h:32px"></li>
+      <li><img src="assets/logos/fruit-of-the-loom.svg" width="171" height="22" loading="lazy" decoding="async" alt="Fruit of the Loom" style="--h:22px"></li>
+    </ul><ul aria-hidden="true">
+      <li><img src="assets/logos/liverpool.svg" width="121" height="28" loading="lazy" decoding="async" alt="Liverpool" style="--h:28px"></li>
+      <li><img src="assets/logos/gatorade.svg" width="148" height="30" loading="lazy" decoding="async" alt="Gatorade" style="--h:30px"></li>
+      <li><img src="assets/logos/jose-cuervo.svg" width="80" height="34" loading="lazy" decoding="async" alt="José Cuervo" style="--h:34px"></li>
+      <li><img src="assets/logos/forbes-mexico.svg" width="106" height="32" loading="lazy" decoding="async" alt="Forbes México" style="--h:32px"></li>
+      <li><img src="assets/logos/quien.svg" width="76" height="32" loading="lazy" decoding="async" alt="Quién" style="--h:32px"></li>
+      <li><img src="assets/logos/fruit-of-the-loom.svg" width="171" height="22" loading="lazy" decoding="async" alt="Fruit of the Loom" style="--h:22px"></li>
+    </ul></div>
+</section>
+
+<!-- 3 ABOUT -->
 <section class="about" aria-labelledby="about-title">
   <div class="wrap grid">
     <figure data-reveal="img"><picture>
@@ -535,320 +626,108 @@ form.leaving{opacity:0;transform:translateY(-12px)}
   </div>
 </section>
 
-<!-- 3 CLIENT LOGOS -->
-<section class="logos" aria-label="Clientes" data-reveal="logos">
+<!-- 4 STATEMENT -->
+<section class="statement" aria-label="Propuesta">
   <div class="wrap">
-    <span class="label">Han trabajado con Luis</span>
-    <ul>
-      <li><img src="assets/logos/liverpool.svg" width="121" height="28" loading="lazy" decoding="async" alt="Liverpool" style="--h:28px"></li>
-      <li><img src="assets/logos/gatorade.svg" width="148" height="30" loading="lazy" decoding="async" alt="Gatorade" style="--h:30px"></li>
-      <li><img src="assets/logos/jose-cuervo.svg" width="80" height="34" loading="lazy" decoding="async" alt="José Cuervo" style="--h:34px"></li>
-      <li><img src="assets/logos/forbes-mexico.svg" width="106" height="32" loading="lazy" decoding="async" alt="Forbes México" style="--h:32px"></li>
-      <li><img src="assets/logos/quien.svg" width="76" height="32" loading="lazy" decoding="async" alt="Quién" style="--h:32px"></li>
-      <li><img src="assets/logos/fruit-of-the-loom.svg" width="171" height="22" loading="lazy" decoding="async" alt="Fruit of the Loom" style="--h:22px"></li>
-    </ul>
+    <p class="serif" data-reveal="lines">Una sola mirada en toda la producción: <em>dirección, luz y retoque.</em></p>
+    <a class="tlink" href="#cotizar" data-cta="statement">Cotizar proyecto</a>
   </div>
 </section>
 
-<!-- 4 SELECTED WORK -->
-<section class="work" id="trabajo">
+<!-- 5 WORK: brands + portfolio tabs -->
+<section class="work2" id="trabajo">
   <div class="wrap">
-    <div class="sec-head" data-reveal="rule"><span class="label">Trabajo seleccionado</span><span class="label">03 proyectos</span></div>
-
-    <article class="case" data-reveal="case">
-      <div class="case-head">
-        <span class="n">01</span>
-        <h3 data-reveal="lines">Gatorade</h3>
-        <p>Gatorade 30: campaña con atletas olímpicos y deportistas en basquetbol, futbol, clavados y lucha.<span>2021</span></p>
-      </div>
-      <figure class="big" data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="1600" height="900" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/d9624b0f-5d2b-4c07-92d0-7a3a44cb8210/070521_Gatorade30_Basquetball_3214.jpg?format=1500w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/d9624b0f-5d2b-4c07-92d0-7a3a44cb8210/070521_Gatorade30_Basquetball_3214.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/d9624b0f-5d2b-4c07-92d0-7a3a44cb8210/070521_Gatorade30_Basquetball_3214.jpg?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/d9624b0f-5d2b-4c07-92d0-7a3a44cb8210/070521_Gatorade30_Basquetball_3214.jpg?format=1500w 1500w" sizes="(max-width:600px) 92vw, (max-width:1440px) 94vw, 1360px" alt="Campaña Gatorade 30 por Luis Calderón: jugadores de basquetbol entrenando en un gimnasio"></div></figure>
-      <div class="smalls">
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/3b81dd61-22c1-4250-a62c-0679d51223ca/090521_Gatorade_30_Paola_Espinoza_0673.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/3b81dd61-22c1-4250-a62c-0679d51223ca/090521_Gatorade_30_Paola_Espinoza_0673.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/3b81dd61-22c1-4250-a62c-0679d51223ca/090521_Gatorade_30_Paola_Espinoza_0673.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/3b81dd61-22c1-4250-a62c-0679d51223ca/090521_Gatorade_30_Paola_Espinoza_0673.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 31vw" alt="Retrato de Paola Espinoza por Luis Calderón para la campaña Gatorade 30"></div><figcaption class="cap"><span class="nm">Paola Espinoza</span><span class="rl">Clavadista olímpica · Gatorade</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/d9740bf1-8c2b-48b6-b366-5bd7ad750aad/060521_Gatorade30_Jane_Valencia_1863.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/d9740bf1-8c2b-48b6-b366-5bd7ad750aad/060521_Gatorade30_Jane_Valencia_1863.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/d9740bf1-8c2b-48b6-b366-5bd7ad750aad/060521_Gatorade30_Jane_Valencia_1863.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/d9740bf1-8c2b-48b6-b366-5bd7ad750aad/060521_Gatorade30_Jane_Valencia_1863.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 31vw" alt="Retrato de Jane Valencia por Luis Calderón para la campaña Gatorade 30"></div><figcaption class="cap"><span class="nm">Jane Valencia</span><span class="rl">Luchadora olímpica · Gatorade</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/8678a39a-b23d-4c75-a8f5-6e59c0d9d4d4/090521_Gatorade_30_Randal_willars_0381.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/8678a39a-b23d-4c75-a8f5-6e59c0d9d4d4/090521_Gatorade_30_Randal_willars_0381.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/8678a39a-b23d-4c75-a8f5-6e59c0d9d4d4/090521_Gatorade_30_Randal_willars_0381.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/8678a39a-b23d-4c75-a8f5-6e59c0d9d4d4/090521_Gatorade_30_Randal_willars_0381.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 31vw" alt="Retrato de Randal Willars por Luis Calderón para la campaña Gatorade 30"></div><figcaption class="cap"><span class="nm">Randal Willars</span><span class="rl">Clavadista olímpico · Gatorade</span></figcaption></figure>
-      </div>
-    </article>
-
-    <article class="case" data-reveal="case">
-      <div class="case-head">
-        <span class="n">02</span>
-        <h3 data-reveal="lines">Liverpool</h3>
-        <p>Campañas de temporada: Fashion Fest, Mujeres y Navidad.<span>2021–2022</span></p>
-      </div>
-      <figure class="big" data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="1600" height="900" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/7b2ef52b-7e93-443e-b503-50e36bfc46a3/31012022_Liverpool_FF_D3_08_Playa_1413.jpg?format=1500w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/7b2ef52b-7e93-443e-b503-50e36bfc46a3/31012022_Liverpool_FF_D3_08_Playa_1413.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/7b2ef52b-7e93-443e-b503-50e36bfc46a3/31012022_Liverpool_FF_D3_08_Playa_1413.jpg?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/7b2ef52b-7e93-443e-b503-50e36bfc46a3/31012022_Liverpool_FF_D3_08_Playa_1413.jpg?format=1500w 1500w" sizes="(max-width:600px) 92vw, (max-width:1440px) 94vw, 1360px" alt="Campaña Liverpool Fashion Fest por Luis Calderón: dos niñas jugando en el mar al atardecer"></div></figure>
-      <div class="smalls">
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/75797300-7ed3-4dc2-bd78-567e987de73a/20220208Liverpool_Mujeres_LC_04_Azul_Individual03-504.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/75797300-7ed3-4dc2-bd78-567e987de73a/20220208Liverpool_Mujeres_LC_04_Azul_Individual03-504.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/75797300-7ed3-4dc2-bd78-567e987de73a/20220208Liverpool_Mujeres_LC_04_Azul_Individual03-504.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/75797300-7ed3-4dc2-bd78-567e987de73a/20220208Liverpool_Mujeres_LC_04_Azul_Individual03-504.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 31vw" alt="Campaña Liverpool Mujeres por Luis Calderón: modelo con cabello rosa y gorro tejido"></div><figcaption class="cap"><span class="nm">Mujeres</span><span class="rl">Liverpool · 2022</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/bbd790ca-5434-4db7-b92e-1f56f7e8fc51/221009_LIVERPOOL_NAVIDAD_02_PREGUNTON-0825.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/bbd790ca-5434-4db7-b92e-1f56f7e8fc51/221009_LIVERPOOL_NAVIDAD_02_PREGUNTON-0825.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/bbd790ca-5434-4db7-b92e-1f56f7e8fc51/221009_LIVERPOOL_NAVIDAD_02_PREGUNTON-0825.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/bbd790ca-5434-4db7-b92e-1f56f7e8fc51/221009_LIVERPOOL_NAVIDAD_02_PREGUNTON-0825.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 31vw" alt="Campaña Liverpool Navidad por Luis Calderón: familia junto al árbol de Navidad"></div><figcaption class="cap"><span class="nm">Navidad</span><span class="rl">Liverpool · 2022</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/bc7cf30d-d9a3-4866-8375-3916a4ead4b5/LIVERPOOL_05_SL_HOMBRE_B_0919.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/bc7cf30d-d9a3-4866-8375-3916a4ead4b5/LIVERPOOL_05_SL_HOMBRE_B_0919.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/bc7cf30d-d9a3-4866-8375-3916a4ead4b5/LIVERPOOL_05_SL_HOMBRE_B_0919.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/bc7cf30d-d9a3-4866-8375-3916a4ead4b5/LIVERPOOL_05_SL_HOMBRE_B_0919.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 31vw" alt="Campaña Liverpool por Luis Calderón: modelo masculino con camisa estampada en estudio"></div><figcaption class="cap"><span class="nm">Moda hombre</span><span class="rl">Liverpool</span></figcaption></figure>
-      </div>
-    </article>
-
-    <article class="case" data-reveal="case">
-      <div class="case-head">
-        <span class="n">03</span>
-        <h3 data-reveal="lines">Quién</h3>
-        <p>Portada y retratos de Quién 50, los 50 personajes que transforman a México, y editorial de moda con Fendi.<span>2022 · Revista Quién</span></p>
-      </div>
-      <figure class="big" data-reveal="img"><div class="frame"><img style="object-position:50% 15%" loading="lazy" decoding="async" width="1600" height="900" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/87a4d151-571d-4be9-8605-ecc61eb28854/2209_Quien50_16_Tony_Dalton_1228.jpg?format=1500w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/87a4d151-571d-4be9-8605-ecc61eb28854/2209_Quien50_16_Tony_Dalton_1228.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/87a4d151-571d-4be9-8605-ecc61eb28854/2209_Quien50_16_Tony_Dalton_1228.jpg?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/87a4d151-571d-4be9-8605-ecc61eb28854/2209_Quien50_16_Tony_Dalton_1228.jpg?format=1500w 1500w" sizes="(max-width:600px) 92vw, (max-width:1440px) 94vw, 1360px" alt="Retrato de Tony Dalton por Luis Calderón para Quién 50"></div><figcaption class="cap cap-over"><span class="nm">Tony Dalton</span><span class="rl">Actor · Quién 50</span></figcaption></figure>
-      <div class="smalls">
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/9af34d86-e2c7-41f4-8fb8-63d94b0de6a3/2209_Quien50_06_Irene_Azuela_Ange%CC%81lica_Rogel_0577.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/9af34d86-e2c7-41f4-8fb8-63d94b0de6a3/2209_Quien50_06_Irene_Azuela_Ange%CC%81lica_Rogel_0577.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/9af34d86-e2c7-41f4-8fb8-63d94b0de6a3/2209_Quien50_06_Irene_Azuela_Ange%CC%81lica_Rogel_0577.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/9af34d86-e2c7-41f4-8fb8-63d94b0de6a3/2209_Quien50_06_Irene_Azuela_Ange%CC%81lica_Rogel_0577.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 31vw" alt="Retrato de Irene Azuela y Angélica Rogel por Luis Calderón para Quién 50"></div><figcaption class="cap"><span class="nm">Irene Azuela y Angélica Rogel</span><span class="rl">Quién 50 · 2022</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/ab9a1760-8645-450b-95ed-02db34b80799/2209_Quien50_08_Javier_Marin_0784.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/ab9a1760-8645-450b-95ed-02db34b80799/2209_Quien50_08_Javier_Marin_0784.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/ab9a1760-8645-450b-95ed-02db34b80799/2209_Quien50_08_Javier_Marin_0784.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/ab9a1760-8645-450b-95ed-02db34b80799/2209_Quien50_08_Javier_Marin_0784.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 31vw" alt="Retrato de Javier Marín por Luis Calderón para Quién 50"></div><figcaption class="cap"><span class="nm">Javier Marín</span><span class="rl">Escultor · Quién 50</span></figcaption></figure>
-        <figure data-reveal="img"><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/4de4e87c-d9a2-4401-a3e4-8ffe239aded4/220820_QUIEN_FENDI_05_711+copy.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/4de4e87c-d9a2-4401-a3e4-8ffe239aded4/220820_QUIEN_FENDI_05_711+copy.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/4de4e87c-d9a2-4401-a3e4-8ffe239aded4/220820_QUIEN_FENDI_05_711+copy.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/4de4e87c-d9a2-4401-a3e4-8ffe239aded4/220820_QUIEN_FENDI_05_711+copy.jpg?format=1000w 1000w" sizes="(max-width:600px) 46vw, 31vw" alt="Editorial de moda por Luis Calderón para Quién con bolso Fendi"></div><figcaption class="cap"><span class="nm">Quién × Fendi</span><span class="rl">Editorial · 2022</span></figcaption></figure>
-      </div>
-    </article>
-
-  </div>
-</section>
-
-<!-- 4a PAUSE -->
-<section class="pause" aria-hidden="true"><picture>
-  <source type="image/webp" srcset="assets/portfolio/velo-oscuro-800.webp 800w, assets/portfolio/velo-oscuro-1200.webp 1200w, assets/portfolio/velo-oscuro-1600.webp 1371w" sizes="100vw">
-  <img src="assets/portfolio/velo-oscuro-1200.jpg" srcset="assets/portfolio/velo-oscuro-800.jpg 800w, assets/portfolio/velo-oscuro-1200.jpg 1200w, assets/portfolio/velo-oscuro-1600.jpg 1371w" sizes="100vw" width="1371" height="1920" loading="lazy" decoding="async" alt="" style="object-position:50% 48%">
-</picture></section>
-<!-- 4b PORTFOLIO -->
-<section class="folio" id="portafolio">
-  <div class="wrap">
-    <div class="sec-head" data-reveal="rule"><span class="label">Portafolio</span><span class="label">Comercial · Editorial · Retrato</span></div>
-    <div class="cat">
-      <div class="cat-head"><span class="label">01</span><h2 class="serif" data-reveal="lines">Comercial</h2><p data-reveal="up">Producto, moda y campañas para marca.</p></div>
-      <div class="pgrid">
-      <figure class="p-l" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1681"><picture>
-        <source type="image/webp" srcset="assets/portfolio/fragancia-800.webp 800w, assets/portfolio/fragancia-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
-        <img src="assets/portfolio/fragancia-800.jpg" srcset="assets/portfolio/fragancia-800.jpg 800w, assets/portfolio/fragancia-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1681" loading="lazy" decoding="async" alt="Campaña de fragancia por Luis Calderón: modelo sosteniendo un frasco de perfume">
-      </picture></div><figcaption class="cap"><span class="nm">Fragancia</span><span class="rl">Campaña · Producto</span></figcaption></figure>
-      <figure class="p-s" data-reveal="img"><div class="frame" style="aspect-ratio:800/1073"><picture>
-        <source type="image/webp" srcset="assets/portfolio/rayas-800.webp 800w" sizes="(max-width:600px) 70vw, 30vw">
-        <img src="assets/portfolio/rayas-800.jpg" srcset="assets/portfolio/rayas-800.jpg 800w" sizes="(max-width:600px) 70vw, 30vw" width="800" height="1073" loading="lazy" decoding="async" alt="Moda por Luis Calderón: modelo con traje de rayas rojas y blancas en movimiento">
-      </picture></div><figcaption class="cap"><span class="nm">Movimiento</span><span class="rl">Moda · Estudio</span></figcaption></figure>
-      <figure class="p-l2" data-reveal="img"><div class="frame" style="aspect-ratio:1600/2000"><picture>
-        <source type="image/webp" srcset="assets/portfolio/terraza-800.webp 800w, assets/portfolio/terraza-1200.webp 1200w, assets/portfolio/terraza-1600.webp 1600w" sizes="(max-width:600px) 92vw, 54vw">
-        <img src="assets/portfolio/terraza-800.jpg" srcset="assets/portfolio/terraza-800.jpg 800w, assets/portfolio/terraza-1200.jpg 1200w, assets/portfolio/terraza-1600.jpg 1600w" sizes="(max-width:600px) 92vw, 54vw" width="1600" height="2000" loading="lazy" decoding="async" alt="Campaña de moda por Luis Calderón: modelo con traje beige en una terraza con montañas">
-      </picture></div><figcaption class="cap"><span class="nm">Terraza</span><span class="rl">Moda · Locación</span></figcaption></figure>
-      <figure class="p-s2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1600"><picture>
-        <source type="image/webp" srcset="assets/portfolio/estampado-800.webp 800w, assets/portfolio/estampado-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
-        <img src="assets/portfolio/estampado-800.jpg" srcset="assets/portfolio/estampado-800.jpg 800w, assets/portfolio/estampado-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Moda por Luis Calderón: modelo con vestido estampado y botas blancas">
-      </picture></div><figcaption class="cap"><span class="nm">Estampado</span><span class="rl">Moda · Estudio</span></figcaption></figure>
-      </div>
+    <div class="sec-head" data-reveal="rule"><span class="label">Trabajo</span><span class="label">Campañas · Editorial · Retrato</span></div>
+    <div class="brands" data-reveal="stagger">
+      <figure><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/3b81dd61-22c1-4250-a62c-0679d51223ca/090521_Gatorade_30_Paola_Espinoza_0673.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/3b81dd61-22c1-4250-a62c-0679d51223ca/090521_Gatorade_30_Paola_Espinoza_0673.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/3b81dd61-22c1-4250-a62c-0679d51223ca/090521_Gatorade_30_Paola_Espinoza_0673.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/3b81dd61-22c1-4250-a62c-0679d51223ca/090521_Gatorade_30_Paola_Espinoza_0673.jpg?format=1000w 1000w" sizes="(max-width:600px) 92vw, 31vw" alt="Retrato de Paola Espinoza por Luis Calderón para la campaña Gatorade 30"></div><figcaption class="cap"><span class="nm">Gatorade</span><span class="rl">Campaña Gatorade 30 · 2021</span></figcaption></figure>
+      <figure><div class="frame"><img loading="lazy" decoding="async" width="800" height="1000" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/75797300-7ed3-4dc2-bd78-567e987de73a/20220208Liverpool_Mujeres_LC_04_Azul_Individual03-504.jpg?format=750w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/75797300-7ed3-4dc2-bd78-567e987de73a/20220208Liverpool_Mujeres_LC_04_Azul_Individual03-504.jpg?format=500w 500w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/75797300-7ed3-4dc2-bd78-567e987de73a/20220208Liverpool_Mujeres_LC_04_Azul_Individual03-504.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/75797300-7ed3-4dc2-bd78-567e987de73a/20220208Liverpool_Mujeres_LC_04_Azul_Individual03-504.jpg?format=1000w 1000w" sizes="(max-width:600px) 92vw, 31vw" alt="Campaña Liverpool Mujeres por Luis Calderón: modelo con cabello rosa y gorro tejido"></div><figcaption class="cap"><span class="nm">Liverpool</span><span class="rl">Campañas de temporada · 2022</span></figcaption></figure>
+      <figure><div class="frame"><img style="object-position:50% 20%" loading="lazy" decoding="async" width="1600" height="900" src="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/87a4d151-571d-4be9-8605-ecc61eb28854/2209_Quien50_16_Tony_Dalton_1228.jpg?format=1500w" srcset="https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/87a4d151-571d-4be9-8605-ecc61eb28854/2209_Quien50_16_Tony_Dalton_1228.jpg?format=750w 750w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/87a4d151-571d-4be9-8605-ecc61eb28854/2209_Quien50_16_Tony_Dalton_1228.jpg?format=1000w 1000w, https://images.squarespace-cdn.com/content/v1/62f541d00ca4b11b33d895f1/87a4d151-571d-4be9-8605-ecc61eb28854/2209_Quien50_16_Tony_Dalton_1228.jpg?format=1500w 1500w" sizes="(max-width:600px) 92vw, 31vw" alt="Retrato de Tony Dalton por Luis Calderón para Quién 50"></div><figcaption class="cap"><span class="nm">Quién</span><span class="rl">Quién 50 · Portada y retratos · 2022</span></figcaption></figure>
     </div>
-    <div class="cat">
-      <div class="cat-head"><span class="label">02</span><h2 class="serif" data-reveal="lines">Editorial</h2><p data-reveal="up">Moda en blanco y negro, con dirección de arte.</p></div>
-      <div class="pgrid">
-      <figure class="p-l" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1669"><picture>
-        <source type="image/webp" srcset="assets/portfolio/bolso-800.webp 800w, assets/portfolio/bolso-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
-        <img src="assets/portfolio/bolso-800.jpg" srcset="assets/portfolio/bolso-800.jpg 800w, assets/portfolio/bolso-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1669" loading="lazy" decoding="async" alt="Editorial de moda por Luis Calderón: modelo con vestido negro, lentes y bolso blanco">
-      </picture></div><figcaption class="cap"><span class="nm">Silueta</span><span class="rl">Editorial · Accesorios</span></figcaption></figure>
-      <figure class="p-s" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1681"><picture>
-        <source type="image/webp" srcset="assets/portfolio/velo-800.webp 800w, assets/portfolio/velo-800.webp 800w, assets/portfolio/velo-1200.webp 1200w, assets/portfolio/velo-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
-        <img src="assets/portfolio/velo-800.jpg" srcset="assets/portfolio/velo-800.jpg 800w, assets/portfolio/velo-800.jpg 800w, assets/portfolio/velo-1200.jpg 1200w, assets/portfolio/velo-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1681" loading="lazy" decoding="async" alt="Editorial por Luis Calderón: modelo cubierta con un velo transparente">
-      </picture></div><figcaption class="cap"><span class="nm">Velo</span><span class="rl">Editorial · Blanco y negro</span></figcaption></figure>
-      <figure class="p-l2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1681"><picture>
-        <source type="image/webp" srcset="assets/portfolio/panuelo-800.webp 800w, assets/portfolio/panuelo-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
-        <img src="assets/portfolio/panuelo-800.jpg" srcset="assets/portfolio/panuelo-800.jpg 800w, assets/portfolio/panuelo-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1681" loading="lazy" decoding="async" alt="Editorial por Luis Calderón: retrato de hombre con paliacate cubriendo el rostro">
-      </picture></div><figcaption class="cap"><span class="nm">Paliacate</span><span class="rl">Editorial · Retrato</span></figcaption></figure>
-      <figure class="p-s2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1679"><picture>
-        <source type="image/webp" srcset="assets/portfolio/cuadros-800.webp 800w, assets/portfolio/cuadros-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
-        <img src="assets/portfolio/cuadros-800.jpg" srcset="assets/portfolio/cuadros-800.jpg 800w, assets/portfolio/cuadros-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1679" loading="lazy" decoding="async" alt="Editorial de moda por Luis Calderón: hombre con traje de cuadros">
-      </picture></div><figcaption class="cap"><span class="nm">Cuadros</span><span class="rl">Editorial · Moda hombre</span></figcaption></figure>
-      </div>
-    </div>
-    <div class="cat">
-      <div class="cat-head"><span class="label">03</span><h2 class="serif" data-reveal="lines">Retrato</h2><p data-reveal="up">Personas, con luz y carácter.</p></div>
-      <div class="pgrid">
-      <figure class="p-l" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1600"><picture>
-        <source type="image/webp" srcset="assets/portfolio/retrato-negro-800.webp 800w, assets/portfolio/retrato-negro-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
-        <img src="assets/portfolio/retrato-negro-800.jpg" srcset="assets/portfolio/retrato-negro-800.jpg 800w, assets/portfolio/retrato-negro-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Retrato en blanco y negro por Luis Calderón: hombre con cuello alto negro">
-      </picture></div><figcaption class="cap"><span class="nm">Contraluz</span><span class="rl">Retrato · Estudio</span></figcaption></figure>
-      <figure class="p-s" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1681"><picture>
-        <source type="image/webp" srcset="assets/portfolio/abrigo-800.webp 800w, assets/portfolio/abrigo-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
-        <img src="assets/portfolio/abrigo-800.jpg" srcset="assets/portfolio/abrigo-800.jpg 800w, assets/portfolio/abrigo-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1681" loading="lazy" decoding="async" alt="Retrato por Luis Calderón: mujer con abrigo de pelo blanco y ojos cerrados">
-      </picture></div><figcaption class="cap"><span class="nm">Abrigo</span><span class="rl">Retrato · Estudio</span></figcaption></figure>
-      <figure class="p-l2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1600"><picture>
-        <source type="image/webp" srcset="assets/portfolio/hermanos-800.webp 800w, assets/portfolio/hermanos-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
-        <img src="assets/portfolio/hermanos-800.jpg" srcset="assets/portfolio/hermanos-800.jpg 800w, assets/portfolio/hermanos-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Retrato por Luis Calderón: dos hermanos con saco oscuro">
-      </picture></div><figcaption class="cap"><span class="nm">Hermanos</span><span class="rl">Retrato · Estudio</span></figcaption></figure>
-      <figure class="p-s2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1600"><picture>
-        <source type="image/webp" srcset="assets/portfolio/bigote-800.webp 800w, assets/portfolio/bigote-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
-        <img src="assets/portfolio/bigote-800.jpg" srcset="assets/portfolio/bigote-800.jpg 800w, assets/portfolio/bigote-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Retrato por Luis Calderón: hombre de bigote con playera negra">
-      </picture></div><figcaption class="cap"><span class="nm">Carácter</span><span class="rl">Retrato · Estudio</span></figcaption></figure>
-      </div>
+    <div class="folio2">
+      <div class="tabs" role="tablist" aria-label="Portafolio"><button type="button" role="tab" id="tab-comercial" aria-controls="pan-comercial" aria-selected="true">Comercial</button><button type="button" role="tab" id="tab-editorial" aria-controls="pan-editorial" aria-selected="false" tabindex="-1">Editorial</button><button type="button" role="tab" id="tab-retrato" aria-controls="pan-retrato" aria-selected="false" tabindex="-1">Retrato</button></div>
+      <div class="pan" role="tabpanel" id="pan-comercial" aria-labelledby="tab-comercial"><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/fragancia-800.webp 800w, assets/portfolio/fragancia-1200.webp 1200w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/fragancia-800.jpg" srcset="assets/portfolio/fragancia-800.jpg 800w, assets/portfolio/fragancia-1200.jpg 1200w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Campaña de fragancia: modelo con frasco de perfume"></picture></div><figcaption class="cap"><span class="rl">Campaña · Producto</span></figcaption></figure><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/rayas-800.webp 800w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/rayas-800.jpg" srcset="assets/portfolio/rayas-800.jpg 800w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Moda: traje de rayas rojas y blancas en movimiento"></picture></div><figcaption class="cap"><span class="rl">Moda · Estudio</span></figcaption></figure><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/terraza-800.webp 800w, assets/portfolio/terraza-1200.webp 1200w, assets/portfolio/terraza-1600.webp 1600w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/terraza-800.jpg" srcset="assets/portfolio/terraza-800.jpg 800w, assets/portfolio/terraza-1200.jpg 1200w, assets/portfolio/terraza-1600.jpg 1600w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Moda: modelo con traje beige en una terraza"></picture></div><figcaption class="cap"><span class="rl">Moda · Locación</span></figcaption></figure><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/estampado-800.webp 800w, assets/portfolio/estampado-1200.webp 1200w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/estampado-800.jpg" srcset="assets/portfolio/estampado-800.jpg 800w, assets/portfolio/estampado-1200.jpg 1200w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Moda: vestido estampado y botas blancas"></picture></div><figcaption class="cap"><span class="rl">Moda · Estudio</span></figcaption></figure></div><div class="pan" role="tabpanel" id="pan-editorial" aria-labelledby="tab-editorial" hidden><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/bolso-800.webp 800w, assets/portfolio/bolso-1200.webp 1200w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/bolso-800.jpg" srcset="assets/portfolio/bolso-800.jpg 800w, assets/portfolio/bolso-1200.jpg 1200w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Editorial: vestido negro, lentes y bolso blanco"></picture></div><figcaption class="cap"><span class="rl">Editorial · Accesorios</span></figcaption></figure><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/velo-800.webp 800w, assets/portfolio/velo-1200.webp 1200w, assets/portfolio/velo-1600.webp 1600w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/velo-800.jpg" srcset="assets/portfolio/velo-800.jpg 800w, assets/portfolio/velo-1200.jpg 1200w, assets/portfolio/velo-1600.jpg 1600w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Editorial: modelo cubierta con un velo"></picture></div><figcaption class="cap"><span class="rl">Editorial · B/N</span></figcaption></figure><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/panuelo-800.webp 800w, assets/portfolio/panuelo-1200.webp 1200w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/panuelo-800.jpg" srcset="assets/portfolio/panuelo-800.jpg 800w, assets/portfolio/panuelo-1200.jpg 1200w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Editorial: hombre con paliacate"></picture></div><figcaption class="cap"><span class="rl">Editorial · Retrato</span></figcaption></figure><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/cuadros-800.webp 800w, assets/portfolio/cuadros-1200.webp 1200w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/cuadros-800.jpg" srcset="assets/portfolio/cuadros-800.jpg 800w, assets/portfolio/cuadros-1200.jpg 1200w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Editorial: hombre con traje de cuadros"></picture></div><figcaption class="cap"><span class="rl">Editorial · Moda hombre</span></figcaption></figure></div><div class="pan" role="tabpanel" id="pan-retrato" aria-labelledby="tab-retrato" hidden><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/retrato-negro-800.webp 800w, assets/portfolio/retrato-negro-1200.webp 1200w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/retrato-negro-800.jpg" srcset="assets/portfolio/retrato-negro-800.jpg 800w, assets/portfolio/retrato-negro-1200.jpg 1200w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Retrato en blanco y negro de hombre con cuello alto"></picture></div><figcaption class="cap"><span class="rl">Retrato · Estudio</span></figcaption></figure><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/abrigo-800.webp 800w, assets/portfolio/abrigo-1200.webp 1200w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/abrigo-800.jpg" srcset="assets/portfolio/abrigo-800.jpg 800w, assets/portfolio/abrigo-1200.jpg 1200w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Retrato de mujer con abrigo blanco"></picture></div><figcaption class="cap"><span class="rl">Retrato · Estudio</span></figcaption></figure><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/hermanos-800.webp 800w, assets/portfolio/hermanos-1200.webp 1200w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/hermanos-800.jpg" srcset="assets/portfolio/hermanos-800.jpg 800w, assets/portfolio/hermanos-1200.jpg 1200w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Retrato de dos hermanos"></picture></div><figcaption class="cap"><span class="rl">Retrato · Estudio</span></figcaption></figure><figure><div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/bigote-800.webp 800w, assets/portfolio/bigote-1200.webp 1200w" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/portfolio/bigote-800.jpg" srcset="assets/portfolio/bigote-800.jpg 800w, assets/portfolio/bigote-1200.jpg 1200w" sizes="(max-width:600px) 46vw, 23vw" width="800" height="1000" loading="lazy" decoding="async" alt="Retrato de hombre de bigote"></picture></div><figcaption class="cap"><span class="rl">Retrato · Estudio</span></figcaption></figure></div>
     </div>
   </div>
 </section>
 
-<!-- 4c TESTIMONIOS -->
-<section class="testi" id="testimonios" aria-labelledby="testi-title">
+<!-- 6 PROCESS -->
+<section class="process2" aria-labelledby="proc-label">
   <div class="wrap">
-    <div class="sec-head" data-reveal="rule"><span class="label" id="testi-title">Testimonios</span><span class="label">Quienes han trabajado con Luis</span></div>
-    <figure class="t-feat" data-reveal="up"><blockquote class="serif">“Conozco el trabajo de Luis Calderón desde 2022, antes de comenzar a coordinar el equipo de fotografía de Amazon Studio México, en 2025. Su experiencia y atención al detalle siempre han llamado mi atención. Es un fotógrafo versátil, capaz de lograr excelentes resultados en still, moda, editorial y video. Se distingue por entregar trabajos de gran calidad, combinando creatividad y dinamismo, incluso en situaciones complejas.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">IV</span><span><span class="nm">Iván Volpe</span><span class="rl">Photo Studio Manager · Amazon Studio México</span></span></div></figcaption></figure>
-    <div class="t-grid" data-reveal="stagger">
-      <figure class="t-item"><blockquote>“Conozco a Luis desde hace muchos años, desde que coincidíamos en diferentes catálogos de moda, y siempre me ha gustado mucho su trabajo. Hace poco hice unas fotos con él para mi book y fue una gran experiencia. Me gusta mucho su creatividad y la confianza que te transmite frente a la cámara.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">LS</span><span><span class="nm">Leti Santos</span><span class="rl">Figura pública</span></span></div></figcaption></figure>
-      <figure class="t-item"><blockquote>“Si tuviera que definir el trabajo de Luis Calderón en una palabra, sería impecable. Su mirada combina sensibilidad, dominio técnico y una elegancia que trasciende lo estético. Trabajar con él es siempre un placer: todo fluye y los clientes quedan felices.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">GT</span><span><span class="nm">Gaby Tort</span><span class="rl">Productora · Colectivo Conejo Feroz</span></span></div></figcaption></figure>
-      <figure class="t-item"><blockquote>“Es un fotógrafo con muchísimo talento y, sobre todo, con una sensibilidad muy especial. Tiene una mirada propia, sabe escuchar, entiende las ideas y siempre encuentra la manera de aportar algo interesante desde su perspectiva.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">XC</span><span><span class="nm">Ximena Cortina</span><span class="rl">Directora de Marca y Growth</span></span></div></figcaption></figure>
-      <figure class="t-item"><blockquote>“He colaborado con Luis desde hace más de 5 años y mi experiencia siempre ha sido muy grata. Es muy profesional y talentoso, además de que siempre tiene una gran actitud.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">RR</span><span><span class="nm">Renata Rojo Uribe</span><span class="rl">Executive Producer</span></span></div></figcaption></figure>
-      <figure class="t-item"><blockquote>“Luis es un fotógrafo de gran nivel con quien he colaborado en proyectos para clientes importantes. Su trabajo es impecable, con una propuesta sólida y un excelente manejo de la luz. Además, es un gran ser humano y muy responsable. Lo recomiendo totalmente.”</blockquote><figcaption><div class="sig"><span class="mono" aria-hidden="true">JC</span><span><span class="nm">José Carlos Muñoz</span><span class="rl">Diseñador de imagen y maquillista · 28 años de experiencia</span></span></div></figcaption></figure>
-    </div>
-  </div>
-</section>
-
-<!-- 4d RETRATO EN PELÍCULA -->
-<section class="film" id="pelicula" aria-labelledby="film-title">
-  <div class="wrap">
-    <div class="sec-head" data-reveal="rule"><span class="label">Retrato en película</span></div>
-    <div class="intro">
-      <h2 class="serif" id="film-title" data-reveal="lines">En la era de la IA, el negativo es prueba de que estuviste ahí.</h2>
-      <p data-reveal="up">Retratos hechos en película, revelados a mano y entregados como una pieza física enmarcada. Una imagen que no se puede generar, solo vivir.</p>
-    </div>
-    <div class="manifesto" data-reveal="up">
-      <blockquote class="serif">“El color es descriptivo. El blanco y negro es interpretativo.”<cite>Elliott Erwitt</cite></blockquote>
-      <div class="m-text">
-        <p>El retrato, a lo largo de la historia, nos ha ayudado a comprender de dónde venimos. Es un documento: una mirada al pasado.</p>
-        <p>Es mi deseo que a través de él podamos asomarnos a lo que fuimos para inspirarnos a ser lo que queremos. El retrato nos permite reflexionar de lo exterior a lo interior, y por eso es tan importante mantener esta práctica desde lo más tangible. Fotografía significa pintar con luz.</p>
-        <p>En estos retratos usamos el negativo como base para hacerlos permanentes, invaluables, inamovibles. Y son en blanco y negro por esa razón.</p>
-        <p>Ofrezco este servicio para contemplar a través del tiempo nuestra mirada, lo que somos hoy, para poder compartirlo mañana.</p>
-        <p class="label m-sign">Luis Calderón</p>
-      </div>
-    </div>
-    <!-- TODO: all gallery images are placeholders (data-film="unconfirmed") until Luis sends real film scans -->
-    <div class="gallery">
-      <figure class="g1" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:3/4"><picture>
-        <source type="image/webp" srcset="assets/film/portrait-0041-480.webp 480w, assets/film/portrait-0041-800.webp 800w, assets/film/portrait-0041-1200.webp 1200w" sizes="(max-width:600px) 72vw, 34vw">
-        <img src="assets/film/portrait-0041-800.jpg" width="1440" height="1920" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
-      </picture></div></div><figcaption class="cap"><span class="rl">N.º 01</span></figcaption></figure>
-      <figure class="g2" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:4/3"><picture>
-        <source type="image/webp" srcset="assets/film/portrait-0021-480.webp 480w, assets/film/portrait-0021-800.webp 800w, assets/film/portrait-0021-1200.webp 1200w" sizes="(max-width:600px) 100vw, 50vw">
-        <img src="assets/film/portrait-0021-800.jpg" width="1500" height="1125" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
-      </picture></div></div><figcaption class="cap"><span class="rl">N.º 02</span></figcaption></figure>
-      <figure class="g3" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:3/2"><picture>
-        <source type="image/webp" srcset="assets/film/portrait-0034-480.webp 480w, assets/film/portrait-0034-800.webp 800w, assets/film/portrait-0034-1200.webp 1200w" sizes="(max-width:600px) 100vw, 50vw">
-        <img src="assets/film/portrait-0034-800.jpg" width="1500" height="1001" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
-      </picture></div></div><figcaption class="cap"><span class="rl">N.º 03</span></figcaption></figure>
-      <figure class="g4" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:2/3"><picture>
-        <source type="image/webp" srcset="assets/film/portrait-0030-480.webp 480w, assets/film/portrait-0030-800.webp 800w, assets/film/portrait-0030-1200.webp 1200w" sizes="(max-width:600px) 72vw, 34vw">
-        <img src="assets/film/portrait-0030-800.jpg" width="1474" height="2208" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
-      </picture></div></div><figcaption class="cap"><span class="rl">N.º 04</span></figcaption></figure>
-      <figure class="g5" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:3/4"><picture>
-        <source type="image/webp" srcset="assets/film/portrait-0020-480.webp 480w, assets/film/portrait-0020-800.webp 800w, assets/film/portrait-0020-1200.webp 1200w" sizes="(max-width:600px) 72vw, 34vw">
-        <img src="assets/film/portrait-0020-800.jpg" width="1500" height="2000" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
-      </picture></div></div><figcaption class="cap"><span class="rl">N.º 05</span></figcaption></figure>
-      <figure class="g6" data-reveal="img" data-film="unconfirmed"><div class="print"><div class="frame" style="aspect-ratio:5/6"><picture>
-        <source type="image/webp" srcset="assets/film/portrait-0001-480.webp 480w, assets/film/portrait-0001-800.webp 800w, assets/film/portrait-0001-1200.webp 1200w" sizes="(max-width:600px) 72vw, 34vw">
-        <img src="assets/film/portrait-0001-800.jpg" width="1266" height="1525" loading="lazy" decoding="async" alt="Retrato por Luis Calderón">
-      </picture></div></div><figcaption class="cap"><span class="rl">N.º 06</span></figcaption></figure>
-    </div>
-    <!-- TODO: cameras/formats not confirmed yet — remove `hidden` when Luis confirms the list -->
-    <div class="cams" hidden><span class="label">Las cámaras</span><ul><li>35mm · modelo por confirmar</li><li>Formato medio · modelo por confirmar</li></ul></div>
-    <div class="fopts" data-reveal="up">
-      <div class="fopt">
-        <h3>Retrato digital</h3>
-        <p class="price">Desde <b>$9,500 MXN</b> + IVA</p>
-        <ul><li>Media jornada con dirección editorial</li><li>Hasta 2 looks o sets</li><li>12 imágenes finales retocadas</li></ul>
-        <a class="btn ghost" href="#cotizar" data-tipo="Retrato digital" data-cta="film-digital">Cotizar</a>
-      </div>
-      <div class="fopt feat">
-        <span class="tag">Edición especial</span>
-        <h3>Retrato en negativo</h3>
-        <p class="price">Desde <b>$18,000 MXN</b> + IVA</p>
-        <ul><li>Sesión en película</li><li>Revelado y escaneo</li><li>1 impresión física enmarcada</li></ul>
-        <a class="btn" href="#cotizar" data-tipo="Retrato en negativo" data-cta="film-negativo">Cotizar</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- 5 CTA BAND -->
-<section class="band" aria-label="Cotizar">
-  <div class="wrap">
-    <p class="serif" data-reveal="lines">¿Tu marca es la siguiente?</p>
-    <a class="btn" href="#cotizar" data-cta="band" data-reveal="up">Cotizar proyecto</a>
-  </div>
-</section>
-
-<!-- 5a PAUSE -->
-<section class="pause" aria-hidden="true"><picture>
-  <source type="image/webp" srcset="assets/portfolio/rio-800.webp 800w, assets/portfolio/rio-1200.webp 1200w, assets/portfolio/rio-1600.webp 1500w" sizes="100vw">
-  <img src="assets/portfolio/rio-1200.jpg" srcset="assets/portfolio/rio-800.jpg 800w, assets/portfolio/rio-1200.jpg 1200w, assets/portfolio/rio-1600.jpg 1500w" sizes="100vw" width="1500" height="2000" loading="lazy" decoding="async" alt="" style="object-position:50% 24%">
-</picture></section>
-
-<!-- 5b CAMPAÑA LISTA PARA LANZAR (offer) -->
-<section class="offer" id="campana" aria-labelledby="offer-title">
-  <div class="wrap">
-    <div class="sec-head" data-reveal="rule"><span class="label">Campaña lista para lanzar</span></div>
-    <div class="offer-grid">
-      <div>
-        <h2 class="serif" id="offer-title" data-reveal="lines">Todo lo que tu marca necesita para lanzar, en una sola producción.</h2>
-        <p class="o-price serif" data-reveal="up">Desde $45,000 MXN <span>+ IVA</span></p>
-      </div>
-      <div data-reveal="up">
-        <span class="label">Incluye</span>
-        <ul class="o-list">
-          <li>Preproducción, moodboard y plan de tomas</li>
-          <li>1 día de producción, hasta 8 horas</li>
-          <li>20 imágenes finales retocadas por Luis</li>
-          <li>Licencia de uso libre por 12 meses</li>
-          <li>Imágenes adicionales con 30% de descuento</li>
-        </ul>
-      </div>
-    </div>
-    <p class="bonus" data-bonus data-reveal="up"><b>Bono por tiempo limitado:</b> aparta tu producción de enero a marzo 2027 antes del 15 de diciembre y el video de backstage para redes va por mi cuenta.</p>
-    <div class="guar" data-reveal="up">
-      <span class="label">Doble garantía</span>
-      <div class="cols">
-        <div><h3>Entrega a tiempo</h3><p>Si no entrego en la fecha acordada, 10% de descuento.</p></div>
-        <div><h3>Satisfacción</h3><p>Si las imágenes no cumplen el brief y moodboard aprobados, repetimos la toma sin costo.</p></div>
-      </div>
-    </div>
-    <div class="o-foot" data-reveal="up">
-      <p>Solo produzco 10 campañas al mes para dar a cada marca dirección completa.</p>
-      <a class="btn" href="#cotizar" data-tipo="Campaña" data-cta="offer">Apartar fecha</a>
-    </div>
-  </div>
-</section>
-
-<!-- 6 SERVICES -->
-<section class="services" id="servicios">
-  <div class="wrap">
-    <div class="sec-head" data-reveal="rule"><span class="label">Servicios</span><span class="label">Para marcas y agencias</span></div>
-    <div class="cols" data-reveal="stagger">
-      <div class="svc">
-        <span class="label">01</span>
-        <h3>Campaña de marca</h3>
-        <p class="price">Desde <b>$45,000 MXN</b></p>
-        <ul><li>Preproducción y moodboard</li><li>1 día de foto, hasta 8 horas</li><li>20 imágenes finales retocadas por Luis</li><li>Licencia de uso libre 12 meses</li></ul>
-        <a class="tlink" href="#cotizar" data-tipo="Campaña" data-cta="svc-campana">Cotizar</a>
-      </div>
-      <div class="svc">
-        <span class="label">02</span>
-        <h3>Contenido mensual foto + video</h3>
-        <p class="price">Desde <b>$28,000 MXN</b> al mes</p>
-        <ul><li>1 día de producción al mes</li><li>30 fotos retocadas</li><li>6 videos verticales de 15–30 s</li></ul>
-        <a class="tlink" href="#cotizar" data-tipo="Contenido mensual" data-cta="svc-contenido">Cotizar</a>
-      </div>
-      <div class="svc">
-        <span class="label">03</span>
-        <h3>Retrato editorial · digital o en película</h3>
-        <p class="price">Desde <b>$9,500 MXN</b></p>
-        <ul><li>Media jornada con dirección editorial</li><li>Hasta 2 looks o sets</li><li>12 imágenes finales retocadas</li></ul>
-        <div class="svc-links"><a class="tlink" href="#cotizar" data-tipo="Retrato digital" data-cta="svc-retrato">Cotizar</a><a class="tlink" href="#pelicula" data-cta="svc-pelicula">Ver retrato en película →</a></div>
-      </div>
-    </div>
-    <p class="note" data-reveal="up">Precios + IVA. Licencia de uso incluida.</p>
-  </div>
-</section>
-
-<!-- 7 PROCESS (dark) -->
-<section class="process" aria-labelledby="proc-label">
-  <div class="wrap">
-    <div class="sec-head" data-reveal="rule"><span class="label" id="proc-label">Proceso</span><span class="label">De la idea a la entrega</span></div>
-    <ol class="steps" data-reveal="stagger">
-      <li><span class="n">01</span><h3>Brief</h3><p>Hablamos de tu marca, tu público y dónde vivirán las imágenes.</p></li>
-      <li><span class="n">02</span><h3>Preproducción</h3><p>Moodboard, casting, locaciones y plan de tomas, aprobados por ti.</p></li>
-      <li><span class="n">03</span><h3>Producción</h3><p>Un set dirigido de principio a fin, con personas y productos reales.</p></li>
-      <li><span class="n">04</span><h3>Entrega</h3><p>Imágenes retocadas en formatos para web, redes y anuncios, con licencia por escrito.</p></li>
+    <div class="sec-head" data-reveal="rule"><span class="label" id="proc-label">Cómo trabajamos</span><span class="label">De la idea a la entrega</span></div>
+    <ol class="steps2" data-reveal="stagger">
+      <li><span class="n">01</span><h3>Brief</h3><p>Tu marca, tu público y dónde vivirán las imágenes.</p></li>
+      <li><span class="n">02</span><h3>Preproducción</h3><p>Moodboard, casting y locaciones, aprobados por ti.</p></li>
+      <li><span class="n">03</span><h3>Producción</h3><p>Un set dirigido de principio a fin.</p></li>
+      <li><span class="n">04</span><h3>Entrega</h3><p>Imágenes retocadas y licencia por escrito.</p></li>
     </ol>
   </div>
 </section>
 
-<!-- 8 QUOTE FORM -->
+<!-- 7 PROMISE -->
+<section class="promise" aria-label="Doble garantía">
+  <div class="wrap">
+    <span class="label">Doble garantía</span>
+    <div class="pcols" data-reveal="stagger">
+      <div><h3 class="serif">Entrega a tiempo</h3><p>Si no entrego en la fecha acordada, 10% de descuento.</p></div>
+      <div><h3 class="serif">Satisfacción</h3><p>Si las imágenes no cumplen el brief aprobado, repetimos la toma sin costo.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 8 TESTIMONIOS (slider) -->
+<section class="tslider" id="testimonios" aria-roledescription="carrusel" aria-label="Testimonios">
+  <div class="wrap">
+    <span class="label">Testimonios</span>
+    <div class="track" tabindex="0"><figure class="slide" role="group" aria-roledescription="testimonio" aria-label="1 de 6"><blockquote class="serif">“Es un fotógrafo versátil, capaz de lograr excelentes resultados en still, moda, editorial y video. Se distingue por entregar trabajos de gran calidad, incluso en situaciones complejas.”</blockquote><figcaption class="sig"><span class="mono" aria-hidden="true">IV</span><span><span class="nm">Iván Volpe</span><span class="rl">Photo Studio Manager · Amazon Studio México</span></span></figcaption></figure><figure class="slide" role="group" aria-roledescription="testimonio" aria-label="2 de 6"><blockquote class="serif">“Si tuviera que definir el trabajo de Luis en una palabra, sería impecable. Trabajar con él es siempre un placer: todo fluye y los clientes quedan felices.”</blockquote><figcaption class="sig"><span class="mono" aria-hidden="true">GT</span><span><span class="nm">Gaby Tort</span><span class="rl">Productora · Colectivo Conejo Feroz</span></span></figcaption></figure><figure class="slide" role="group" aria-roledescription="testimonio" aria-label="3 de 6"><blockquote class="serif">“Me gusta mucho su creatividad y la confianza que te transmite frente a la cámara. Siempre es un gusto trabajar con él.”</blockquote><figcaption class="sig"><span class="mono" aria-hidden="true">LS</span><span><span class="nm">Leti Santos</span><span class="rl">Figura pública</span></span></figcaption></figure><figure class="slide" role="group" aria-roledescription="testimonio" aria-label="4 de 6"><blockquote class="serif">“Tiene una mirada propia, sabe escuchar, entiende las ideas y siempre encuentra la manera de aportar algo interesante.”</blockquote><figcaption class="sig"><span class="mono" aria-hidden="true">XC</span><span><span class="nm">Ximena Cortina</span><span class="rl">Directora de Marca y Growth</span></span></figcaption></figure><figure class="slide" role="group" aria-roledescription="testimonio" aria-label="5 de 6"><blockquote class="serif">“Su trabajo es impecable, con una propuesta sólida y un excelente manejo de la luz. Lo recomiendo totalmente.”</blockquote><figcaption class="sig"><span class="mono" aria-hidden="true">JC</span><span><span class="nm">José Carlos Muñoz</span><span class="rl">Diseñador de imagen y maquillista</span></span></figcaption></figure><figure class="slide" role="group" aria-roledescription="testimonio" aria-label="6 de 6"><blockquote class="serif">“Es muy profesional y talentoso, además de que siempre tiene una gran actitud.”</blockquote><figcaption class="sig"><span class="mono" aria-hidden="true">RR</span><span><span class="nm">Renata Rojo Uribe</span><span class="rl">Executive Producer</span></span></figcaption></figure></div>
+    <div class="tnav"><button type="button" class="prev" aria-label="Anterior">←</button><div class="dots"><button type="button" aria-label="Testimonio 1" aria-current="true"></button><button type="button" aria-label="Testimonio 2"></button><button type="button" aria-label="Testimonio 3"></button><button type="button" aria-label="Testimonio 4"></button><button type="button" aria-label="Testimonio 5"></button><button type="button" aria-label="Testimonio 6"></button></div><button type="button" class="next" aria-label="Siguiente">→</button></div>
+  </div>
+</section>
+
+<!-- 9 INVESTMENT -->
+<section class="invest" id="campana" aria-labelledby="inv-title">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="rule"><span class="label" id="inv-title">Inversión</span><span class="label">Precios + IVA · licencia incluida</span></div>
+    <div class="icols" data-reveal="stagger">
+      <div class="ic feat">
+        <span class="tag">Más elegido</span>
+        <h3 class="serif">Campaña de marca</h3>
+        <p class="price">Desde <b>$45,000 MXN</b></p>
+        <ul><li>Preproducción y moodboard</li><li>1 día de producción, hasta 8 h</li><li>20 imágenes retocadas</li><li>Licencia 12 meses</li></ul>
+        <a class="btn" href="#cotizar" data-tipo="Campaña" data-cta="inv-campana">Apartar fecha</a>
+      </div>
+      <div class="ic">
+        <h3 class="serif">Contenido mensual</h3>
+        <p class="price">Desde <b>$28,000 MXN</b> / mes</p>
+        <ul><li>1 día de producción al mes</li><li>30 fotos retocadas</li><li>6 videos verticales</li></ul>
+        <a class="tlink" href="#cotizar" data-tipo="Contenido mensual" data-cta="inv-contenido">Cotizar</a>
+      </div>
+      <div class="ic" id="pelicula">
+        <h3 class="serif">Retrato editorial</h3>
+        <p class="price">Digital desde <b>$9,500</b> · En negativo desde <b>$18,000</b></p>
+        <ul><li>Media jornada con dirección</li><li>12 imágenes retocadas</li><li>En negativo: impresión enmarcada</li></ul>
+        <a class="tlink" href="#cotizar" data-tipo="Retrato digital" data-cta="inv-retrato">Cotizar</a>
+      </div>
+    </div>
+    <p class="bonus2" data-bonus><b>Bono:</b> aparta tu producción de enero a marzo 2027 antes del 15 de diciembre y el video de backstage va por mi cuenta.</p>
+    <p class="scarce">Solo produzco 10 campañas al mes para dar a cada marca dirección completa.</p>
+  </div>
+</section>
+
+<!-- 10 FILM NOTE -->
+<section class="filmnote" aria-label="Retrato en película">
+  <div class="wrap fn">
+    <div class="frame"><picture><source type="image/webp" srcset="assets/portfolio/retrato-negro-800.webp 800w, assets/portfolio/retrato-negro-1200.webp 1200w" sizes="(max-width:600px) 92vw, 30vw"><img src="assets/portfolio/retrato-negro-800.jpg" srcset="assets/portfolio/retrato-negro-800.jpg 800w, assets/portfolio/retrato-negro-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 30vw" width="800" height="1067" loading="lazy" decoding="async" alt="Retrato en blanco y negro por Luis Calderón"></picture></div>
+    <div>
+      <span class="label">Retrato en película</span>
+      <blockquote class="serif" data-reveal="lines">“El color es descriptivo. El blanco y negro es interpretativo.”</blockquote>
+      <p class="cite label">Elliott Erwitt</p>
+      <p>El retrato es un documento: una mirada a lo que somos hoy, para compartirlo mañana. Lo hago en negativo para que sea permanente.</p>
+      <p class="label">Luis Calderón</p>
+    </div>
+  </div>
+</section>
+
+<!-- 11 QUOTE FORM -->
 <section class="quote" id="cotizar">
   <div class="wrap grid">
     <div class="aside">
@@ -1022,6 +901,32 @@ if (!RM && matchMedia('(min-width: 901px) and (hover: hover)').matches) {
   addEventListener('scroll', () => { if (!ticking) { ticking = true; requestAnimationFrame(run); } }, {passive:true});
   run();
 }
+
+
+// v12: portfolio tabs
+document.querySelectorAll('.tabs').forEach(tl => {
+  const tabs = [...tl.querySelectorAll('[role=tab]')];
+  const pick = t => tabs.forEach(b => { const on = b === t; b.setAttribute('aria-selected', on); b.tabIndex = on ? 0 : -1; document.getElementById(b.getAttribute('aria-controls')).hidden = !on; });
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => pick(t));
+    t.addEventListener('keydown', e => { if (e.key === 'ArrowRight' || e.key === 'ArrowLeft') { const n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length]; pick(n); n.focus(); } });
+  });
+});
+// v12: testimonial slider (scroll-snap + arrows + dots + gentle autoplay)
+document.querySelectorAll('.tslider').forEach(s => {
+  const tr = s.querySelector('.track'), sl = [...tr.children], dots = [...s.querySelectorAll('.dots button')];
+  let cur = 0, timer;
+  const go = i => { cur = (i + sl.length) % sl.length; tr.scrollTo({left: sl[cur].offsetLeft - tr.offsetLeft, behavior: RM ? 'auto' : 'smooth'}); };
+  const mark = () => { const i = Math.round(tr.scrollLeft / tr.clientWidth); cur = i; dots.forEach((d, k) => d.setAttribute('aria-current', k === i)); };
+  tr.addEventListener('scroll', () => requestAnimationFrame(mark), {passive: true});
+  const stop = () => clearInterval(timer);
+  const start = () => { if (!RM) timer = setInterval(() => go(cur + 1), 7000); };
+  s.querySelector('.prev').onclick = () => { go(cur - 1); stop(); };
+  s.querySelector('.next').onclick = () => { go(cur + 1); stop(); };
+  dots.forEach((d, k) => d.onclick = () => { go(k); stop(); });
+  s.addEventListener('mouseenter', stop); s.addEventListener('focusin', stop); tr.addEventListener('touchstart', stop, {passive: true});
+  start();
+});
 
 // hide the mobile sticky CTA while the form is on screen
 const sticky = document.getElementById('sticky');
