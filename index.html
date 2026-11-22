@@ -335,6 +335,33 @@ footer a:hover{border-bottom-color:currentColor}
   .guar .cols>div+div{border-left:0;border-top:1px solid #3a3a38;padding-left:0;margin-top:24px}
 }
 
+
+/* ================= v10: luxury portfolio + full-screen pauses ================= */
+.pause{padding:0;height:100svh;min-height:560px;max-height:1100px;overflow:hidden;background:#111}
+.pause picture,.pause img{display:block;width:100%;height:100%}
+.pause img{object-fit:cover;background:#111}
+.folio .cat{margin-top:clamp(80px,11vw,170px)}
+.folio .cat:first-of-type{margin-top:0}
+.cat-head{display:grid;grid-template-columns:80px 1fr 1.2fr;gap:16px;align-items:baseline;margin-bottom:clamp(40px,6vw,88px)}
+.cat-head h2{font-size:clamp(44px,5vw,80px);line-height:1;font-weight:400}
+.cat-head p{color:var(--muted);max-width:26em;font-size:15px}
+.pgrid{display:grid;grid-template-columns:repeat(12,1fr);column-gap:clamp(12px,2vw,32px);row-gap:clamp(56px,8vw,128px);align-items:start}
+.p-l{grid-column:1/8}
+.p-s{grid-column:9/13;margin-top:clamp(80px,14vw,240px)}
+.p-l2{grid-column:6/13}
+.p-s2{grid-column:1/5;grid-row:2;margin-top:clamp(120px,18vw,320px)}
+/* quieter, more expensive feel */
+.hero h1{font-weight:400}
+.about h2,.quote h2,.film h2,.offer h2,.band p{font-weight:400}
+.btn{min-height:48px;letter-spacing:.16em;font-size:12px}
+@media (max-width:900px){.cat-head{grid-template-columns:1fr;gap:8px}}
+@media (max-width:600px){
+  .pause{height:78svh;min-height:0}
+  .pgrid{grid-template-columns:repeat(6,1fr);row-gap:44px;column-gap:10px}
+  .pgrid>figure{margin-top:0!important;grid-row:auto!important}
+  .p-l{grid-column:1/7}.p-s{grid-column:2/7}.p-l2{grid-column:1/7}.p-s2{grid-column:1/6}
+}
+
 /* ---- editorial captions + frames (v8) ---- */
 .frame{position:relative;overflow:hidden;background:#ecebe7}
 .frame img{display:block}
@@ -552,7 +579,82 @@ form.leaving{opacity:0;transform:translateY(-12px)}
   </div>
 </section>
 
-<!-- 4b RETRATO EN PELÍCULA -->
+<!-- 4a PAUSE -->
+<section class="pause" aria-hidden="true"><picture>
+  <source type="image/webp" srcset="assets/portfolio/velo-oscuro-800.webp 800w, assets/portfolio/velo-oscuro-1200.webp 1200w, assets/portfolio/velo-oscuro-1600.webp 1371w" sizes="100vw">
+  <img src="assets/portfolio/velo-oscuro-1200.jpg" srcset="assets/portfolio/velo-oscuro-800.jpg 800w, assets/portfolio/velo-oscuro-1200.jpg 1200w, assets/portfolio/velo-oscuro-1600.jpg 1371w" sizes="100vw" width="1371" height="1920" loading="lazy" decoding="async" alt="" style="object-position:50% 48%">
+</picture></section>
+<!-- 4b PORTFOLIO -->
+<section class="folio" id="portafolio">
+  <div class="wrap">
+    <div class="sec-head" data-reveal="rule"><span class="label">Portafolio</span><span class="label">Comercial · Editorial · Retrato</span></div>
+    <div class="cat">
+      <div class="cat-head"><span class="label">01</span><h2 class="serif" data-reveal="lines">Comercial</h2><p data-reveal="up">Producto, moda y campañas para marca.</p></div>
+      <div class="pgrid">
+      <figure class="p-l" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1681"><picture>
+        <source type="image/webp" srcset="assets/portfolio/fragancia-800.webp 800w, assets/portfolio/fragancia-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
+        <img src="assets/portfolio/fragancia-800.jpg" srcset="assets/portfolio/fragancia-800.jpg 800w, assets/portfolio/fragancia-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1681" loading="lazy" decoding="async" alt="Campaña de fragancia por Luis Calderón: modelo sosteniendo un frasco de perfume">
+      </picture></div><figcaption class="cap"><span class="nm">Fragancia</span><span class="rl">Campaña · Producto</span></figcaption></figure>
+      <figure class="p-s" data-reveal="img"><div class="frame" style="aspect-ratio:800/1073"><picture>
+        <source type="image/webp" srcset="assets/portfolio/rayas-800.webp 800w" sizes="(max-width:600px) 70vw, 30vw">
+        <img src="assets/portfolio/rayas-800.jpg" srcset="assets/portfolio/rayas-800.jpg 800w" sizes="(max-width:600px) 70vw, 30vw" width="800" height="1073" loading="lazy" decoding="async" alt="Moda por Luis Calderón: modelo con traje de rayas rojas y blancas en movimiento">
+      </picture></div><figcaption class="cap"><span class="nm">Movimiento</span><span class="rl">Moda · Estudio</span></figcaption></figure>
+      <figure class="p-l2" data-reveal="img"><div class="frame" style="aspect-ratio:1600/2000"><picture>
+        <source type="image/webp" srcset="assets/portfolio/terraza-800.webp 800w, assets/portfolio/terraza-1200.webp 1200w, assets/portfolio/terraza-1600.webp 1600w" sizes="(max-width:600px) 92vw, 54vw">
+        <img src="assets/portfolio/terraza-800.jpg" srcset="assets/portfolio/terraza-800.jpg 800w, assets/portfolio/terraza-1200.jpg 1200w, assets/portfolio/terraza-1600.jpg 1600w" sizes="(max-width:600px) 92vw, 54vw" width="1600" height="2000" loading="lazy" decoding="async" alt="Campaña de moda por Luis Calderón: modelo con traje beige en una terraza con montañas">
+      </picture></div><figcaption class="cap"><span class="nm">Terraza</span><span class="rl">Moda · Locación</span></figcaption></figure>
+      <figure class="p-s2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1600"><picture>
+        <source type="image/webp" srcset="assets/portfolio/estampado-800.webp 800w, assets/portfolio/estampado-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
+        <img src="assets/portfolio/estampado-800.jpg" srcset="assets/portfolio/estampado-800.jpg 800w, assets/portfolio/estampado-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Moda por Luis Calderón: modelo con vestido estampado y botas blancas">
+      </picture></div><figcaption class="cap"><span class="nm">Estampado</span><span class="rl">Moda · Estudio</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="cat">
+      <div class="cat-head"><span class="label">02</span><h2 class="serif" data-reveal="lines">Editorial</h2><p data-reveal="up">Moda en blanco y negro, con dirección de arte.</p></div>
+      <div class="pgrid">
+      <figure class="p-l" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1669"><picture>
+        <source type="image/webp" srcset="assets/portfolio/bolso-800.webp 800w, assets/portfolio/bolso-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
+        <img src="assets/portfolio/bolso-800.jpg" srcset="assets/portfolio/bolso-800.jpg 800w, assets/portfolio/bolso-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1669" loading="lazy" decoding="async" alt="Editorial de moda por Luis Calderón: modelo con vestido negro, lentes y bolso blanco">
+      </picture></div><figcaption class="cap"><span class="nm">Silueta</span><span class="rl">Editorial · Accesorios</span></figcaption></figure>
+      <figure class="p-s" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1681"><picture>
+        <source type="image/webp" srcset="assets/portfolio/velo-800.webp 800w, assets/portfolio/velo-800.webp 800w, assets/portfolio/velo-1200.webp 1200w, assets/portfolio/velo-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
+        <img src="assets/portfolio/velo-800.jpg" srcset="assets/portfolio/velo-800.jpg 800w, assets/portfolio/velo-800.jpg 800w, assets/portfolio/velo-1200.jpg 1200w, assets/portfolio/velo-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1681" loading="lazy" decoding="async" alt="Editorial por Luis Calderón: modelo cubierta con un velo transparente">
+      </picture></div><figcaption class="cap"><span class="nm">Velo</span><span class="rl">Editorial · Blanco y negro</span></figcaption></figure>
+      <figure class="p-l2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1681"><picture>
+        <source type="image/webp" srcset="assets/portfolio/panuelo-800.webp 800w, assets/portfolio/panuelo-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
+        <img src="assets/portfolio/panuelo-800.jpg" srcset="assets/portfolio/panuelo-800.jpg 800w, assets/portfolio/panuelo-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1681" loading="lazy" decoding="async" alt="Editorial por Luis Calderón: retrato de hombre con paliacate cubriendo el rostro">
+      </picture></div><figcaption class="cap"><span class="nm">Paliacate</span><span class="rl">Editorial · Retrato</span></figcaption></figure>
+      <figure class="p-s2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1679"><picture>
+        <source type="image/webp" srcset="assets/portfolio/cuadros-800.webp 800w, assets/portfolio/cuadros-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
+        <img src="assets/portfolio/cuadros-800.jpg" srcset="assets/portfolio/cuadros-800.jpg 800w, assets/portfolio/cuadros-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1679" loading="lazy" decoding="async" alt="Editorial de moda por Luis Calderón: hombre con traje de cuadros">
+      </picture></div><figcaption class="cap"><span class="nm">Cuadros</span><span class="rl">Editorial · Moda hombre</span></figcaption></figure>
+      </div>
+    </div>
+    <div class="cat">
+      <div class="cat-head"><span class="label">03</span><h2 class="serif" data-reveal="lines">Retrato</h2><p data-reveal="up">Personas, con luz y carácter.</p></div>
+      <div class="pgrid">
+      <figure class="p-l" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1600"><picture>
+        <source type="image/webp" srcset="assets/portfolio/retrato-negro-800.webp 800w, assets/portfolio/retrato-negro-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
+        <img src="assets/portfolio/retrato-negro-800.jpg" srcset="assets/portfolio/retrato-negro-800.jpg 800w, assets/portfolio/retrato-negro-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Retrato en blanco y negro por Luis Calderón: hombre con cuello alto negro">
+      </picture></div><figcaption class="cap"><span class="nm">Contraluz</span><span class="rl">Retrato · Estudio</span></figcaption></figure>
+      <figure class="p-s" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1681"><picture>
+        <source type="image/webp" srcset="assets/portfolio/abrigo-800.webp 800w, assets/portfolio/abrigo-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
+        <img src="assets/portfolio/abrigo-800.jpg" srcset="assets/portfolio/abrigo-800.jpg 800w, assets/portfolio/abrigo-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1681" loading="lazy" decoding="async" alt="Retrato por Luis Calderón: mujer con abrigo de pelo blanco y ojos cerrados">
+      </picture></div><figcaption class="cap"><span class="nm">Abrigo</span><span class="rl">Retrato · Estudio</span></figcaption></figure>
+      <figure class="p-l2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1600"><picture>
+        <source type="image/webp" srcset="assets/portfolio/hermanos-800.webp 800w, assets/portfolio/hermanos-1200.webp 1200w" sizes="(max-width:600px) 92vw, 54vw">
+        <img src="assets/portfolio/hermanos-800.jpg" srcset="assets/portfolio/hermanos-800.jpg 800w, assets/portfolio/hermanos-1200.jpg 1200w" sizes="(max-width:600px) 92vw, 54vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Retrato por Luis Calderón: dos hermanos con saco oscuro">
+      </picture></div><figcaption class="cap"><span class="nm">Hermanos</span><span class="rl">Retrato · Estudio</span></figcaption></figure>
+      <figure class="p-s2" data-reveal="img"><div class="frame" style="aspect-ratio:1200/1600"><picture>
+        <source type="image/webp" srcset="assets/portfolio/bigote-800.webp 800w, assets/portfolio/bigote-1200.webp 1200w" sizes="(max-width:600px) 70vw, 30vw">
+        <img src="assets/portfolio/bigote-800.jpg" srcset="assets/portfolio/bigote-800.jpg 800w, assets/portfolio/bigote-1200.jpg 1200w" sizes="(max-width:600px) 70vw, 30vw" width="1200" height="1600" loading="lazy" decoding="async" alt="Retrato por Luis Calderón: hombre de bigote con playera negra">
+      </picture></div><figcaption class="cap"><span class="nm">Carácter</span><span class="rl">Retrato · Estudio</span></figcaption></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4c RETRATO EN PELÍCULA -->
 <section class="film" id="pelicula" aria-labelledby="film-title">
   <div class="wrap">
     <div class="sec-head" data-reveal="rule"><span class="label">Retrato en película</span></div>
@@ -614,6 +716,12 @@ form.leaving{opacity:0;transform:translateY(-12px)}
     <a class="btn" href="#cotizar" data-cta="band" data-reveal="up">Cotizar proyecto</a>
   </div>
 </section>
+
+<!-- 5a PAUSE -->
+<section class="pause" aria-hidden="true"><picture>
+  <source type="image/webp" srcset="assets/portfolio/rio-800.webp 800w, assets/portfolio/rio-1200.webp 1200w, assets/portfolio/rio-1600.webp 1500w" sizes="100vw">
+  <img src="assets/portfolio/rio-1200.jpg" srcset="assets/portfolio/rio-800.jpg 800w, assets/portfolio/rio-1200.jpg 1200w, assets/portfolio/rio-1600.jpg 1500w" sizes="100vw" width="1500" height="2000" loading="lazy" decoding="async" alt="" style="object-position:50% 24%">
+</picture></section>
 
 <!-- 5b CAMPAÑA LISTA PARA LANZAR (offer) -->
 <section class="offer" id="campana" aria-labelledby="offer-title">
