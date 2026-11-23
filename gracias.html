@@ -56,6 +56,23 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
   .next{gap:22px}
   .ctas{flex-direction:column;align-items:center;gap:22px}
 }
+
+/* v3 desktop: balanced two-column editorial spread, fits one screen */
+@media (min-width:901px){
+  main{padding:clamp(32px,5vh,64px) var(--pad)}
+  .card{max-width:1080px;display:grid;grid-template-columns:minmax(0,0.9fr) minmax(0,1fr);gap:clamp(56px,7vw,112px);align-items:center;text-align:left}
+  figure{width:100%;margin:0}
+  .frame{aspect-ratio:4/5;max-height:72vh}
+  figcaption{text-align:left}
+  .label{display:block}
+  h1{font-size:clamp(48px,4.6vw,68px);margin:18px 0 20px}
+  .lead{margin:0;font-size:16px;max-width:26em}
+  .rule{margin:40px 0}
+  .next{justify-content:flex-start;gap:40px}
+  .ctas{justify-content:flex-start;gap:32px;margin-top:48px}
+  .tlink.solid{background:var(--ink);color:#fff;border:1px solid var(--ink);padding:16px 24px}
+  .tlink.solid:hover{opacity:1;background:#fff;color:var(--ink)}
+}
 </style>
 </head>
 <body>
@@ -67,10 +84,11 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
 <main>
   <div class="card">
     <figure>
-      <div class="frame"><img src="assets/hero/hero-desktop-eugenia-1000.jpg" srcset="assets/hero/hero-desktop-eugenia-1000.jpg 1000w" sizes="240px" alt="Retrato en blanco y negro por Luis Calderón para Quién"></div>
+      <div class="frame"><img src="assets/hero/hero-desktop-eugenia-1000.jpg" srcset="assets/hero/hero-desktop-eugenia-1000.jpg 1000w, assets/hero/hero-desktop-eugenia-1500.jpg 1500w" sizes="(min-width:901px) 45vw, 56vw" alt="Retrato en blanco y negro por Luis Calderón para Quién"></div>
       <figcaption>Eugenia · Quién</figcaption>
     </figure>
 
+    <div class="txt">
     <span class="label">Solicitud recibida</span>
     <h1>Gracias<span id="nm"></span>.<br><em>Ya tengo tu proyecto.</em></h1>
     <p class="lead">Lo reviso personalmente y te respondo en menos de 24 horas hábiles.</p>
@@ -84,8 +102,9 @@ footer a{text-decoration:none;border-bottom:1px solid var(--line)}
     </ol>
 
     <div class="ctas">
-      <a class="tlink js-wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3c.2-.4.2-.8.2-.9-.1-.1-.3-.2-.5-.3Z"/></svg>Continuar por WhatsApp</a>
+      <a class="tlink solid js-wa" href="#" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18.2a8.2 8.2 0 0 1-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1 1 12 20.2Zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1l-.8 1c-.1.2-.3.2-.5.1a6.7 6.7 0 0 1-3.3-2.9c-.3-.4.3-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 0 0-.7.3 3 3 0 0 0-.9 2.2 5.2 5.2 0 0 0 1.1 2.7 11.8 11.8 0 0 0 4.5 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 0 0 1.8-1.3c.2-.4.2-.8.2-.9-.1-.1-.3-.2-.5-.3Z"/></svg>Continuar por WhatsApp</a>
       <a class="tlink soft" href="./#trabajo">Ver más trabajo</a>
+    </div>
     </div>
   </div>
 </main>
