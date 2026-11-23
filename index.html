@@ -1023,14 +1023,11 @@ form.addEventListener('submit', e => {
   // if (window.fbq) fbq('track', 'Lead', {content_category: d.tipo, value_range: d.presupuesto});
   // GA4 (uncomment with the GA4 tag above):
   // if (window.gtag) gtag('event', 'generate_lead', {project_type: d.tipo, budget: d.presupuesto});
-  const t = document.querySelector('.thanks');
-  t.querySelector('.js-wa').href = waUrl(`Hola Luis, soy ${d.nombre} de ${d.empresa}. Acabo de enviar el formulario: ${d.tipo}, presupuesto ${d.presupuesto}, ${d.fecha.toLowerCase()}.`);
-  const box = form.parentElement; box.style.minHeight = form.offsetHeight + 'px';   // no page jump
+  // go to the dedicated thank-you page (conversion URL for Meta/Google). Personal details stay in this tab's
+  // sessionStorage — never in the URL, so they don't leak into analytics/pixel logs.
+  try { sessionStorage.setItem('lc_lead', JSON.stringify({n: d.nombre || '', e: d.empresa || '', t: d.tipo || '', b: d.presupuesto || '', f: d.fecha || ''})); } catch (_) {}
   form.classList.add('leaving');
-  setTimeout(() => {
-    form.style.display = 'none'; t.classList.add('entering'); t.style.display = 'block';
-    requestAnimationFrame(() => requestAnimationFrame(() => t.classList.remove('entering')));
-  }, RM ? 0 : 450);
+  setTimeout(() => { location.href = 'gracias.html'; }, RM ? 0 : 300);
 });
 </script>
 </body>
