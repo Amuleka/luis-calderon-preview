@@ -625,9 +625,9 @@ form.leaving{opacity:0;transform:translateY(-12px)}
 .bts-lead em{font-style:italic}
 .bts-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:clamp(10px,1.4vw,20px)}
 .bts-grid .frame{aspect-ratio:4/5;overflow:hidden;background:#ecebe7}
-.bts-grid img,.bts-grid video{width:100%;height:100%;object-fit:cover;display:block}
-.bts-grid .bts-video{grid-column:span 2}
-.bts-grid .bts-video .frame{aspect-ratio:8/5}
+.bts-grid img{width:100%;height:100%;object-fit:cover;display:block}
+.bts-grid .bts-wide{grid-column:span 2}
+.bts-grid .bts-wide .frame{aspect-ratio:8/5}
 .bts-note{margin-top:22px;font-size:14px;color:var(--muted);max-width:40em}
 @media (max-width:600px){.bts-grid{grid-template-columns:1fr 1fr}.bts-xtra{display:none}}
 </style>
@@ -743,12 +743,12 @@ form.leaving{opacity:0;transform:translateY(-12px)}
     <div class="sec-head" data-reveal="rule"><span class="label" id="bts-title">Detrás de cámara</span><span class="label">Equipo e iluminación profesional</span></div>
     <p class="bts-lead serif" data-reveal="up">Una producción completa, <em>no solo un fotógrafo.</em></p>
     <div class="bts-grid">
-      <figure class="bts-video"><div class="frame"><video muted loop playsinline preload="none" poster="assets/bts/produccion-poster.jpg" aria-label="Producción en exterior con equipo de iluminación y asistentes" data-src="assets/bts/produccion.mp4"></video></div></figure>
+      <figure class="bts-wide"><div class="frame"><picture><source type="image/webp" srcset="assets/bts/calle-wide-1200.webp" sizes="(max-width:600px) 92vw, 48vw"><img src="assets/bts/calle-wide-1200.jpg" width="1200" height="820" loading="lazy" decoding="async" alt="Producción en exterior: crew, reflectores y set montado en la calle"></picture></div></figure>
       <figure><div class="frame"><picture><source type="image/webp" srcset="assets/bts/cesped-600.webp" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/bts/cesped-600.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Luis Calderón fotografiando a ras de suelo durante una producción"></picture></div></figure>
       <figure><div class="frame"><picture><source type="image/webp" srcset="assets/bts/escalera-600.webp" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/bts/escalera-600.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Equipo ajustando iluminación en estudio"></picture></div></figure>
       <figure><div class="frame"><picture><source type="image/webp" srcset="assets/bts/set-exterior-600.webp" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/bts/set-exterior-600.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Set en exterior con softbox y estructura de producción"></picture></div></figure>
       <figure><div class="frame"><picture><source type="image/webp" srcset="assets/bts/equipo-600.webp" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/bts/equipo-600.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Luis dirigiendo una toma con iluminación profesional"></picture></div></figure>
-      <figure class="bts-xtra"><div class="frame"><picture><source type="image/webp" srcset="assets/bts/calle-600.webp" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/bts/calle-600.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Producción en exterior con crew y reflectores"></picture></div></figure>
+      <figure class="bts-xtra"><div class="frame"><picture><source type="image/webp" srcset="assets/bts/crew-600.webp" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/bts/crew-600.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Parte del equipo de producción en set"></picture></div></figure>
       <figure class="bts-xtra"><div class="frame"><picture><source type="image/webp" srcset="assets/bts/estudio-600.webp" sizes="(max-width:600px) 46vw, 23vw"><img src="assets/bts/estudio-600.jpg" width="600" height="750" loading="lazy" decoding="async" alt="Luis en set de estudio con equipo de iluminación"></picture></div></figure>
     </div>
     <p class="bts-note" data-reveal="up">Asistentes, iluminación profesional y un set dirigido de principio a fin. Así se ve un día de producción.</p>
@@ -938,10 +938,6 @@ document.querySelectorAll('[data-tipo]').forEach(a => a.addEventListener('click'
   if (r) { r.checked = true; r.closest('.opts').classList.remove('err'); }
 }));
 
-// BTS video: load + play only when visible
-(function(){var v=document.querySelector('.bts-video video');if(!v)return;var loaded=false;
-if(!('IntersectionObserver' in window)){v.src=v.dataset.src;return;}
-new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){if(!loaded){v.src=v.dataset.src;loaded=true;}if(!matchMedia('(prefers-reduced-motion: reduce)').matches){var p=v.play();if(p&&p.catch)p.catch(function(){});}}else if(loaded){v.pause();}});},{rootMargin:'200px'}).observe(v);})();
 // ---- motion (v8): one IntersectionObserver, transform/opacity only ----
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
 const els = [...document.querySelectorAll('[data-reveal]')];
