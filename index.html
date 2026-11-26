@@ -848,7 +848,8 @@ form.leaving{opacity:0;transform:translateY(-12px)}
       <form id="leadForm" novalidate>
         <div><label for="f-name">Nombre</label><input id="f-name" name="nombre" autocomplete="name" required></div>
         <div><label for="f-company">Marca o empresa</label><input id="f-company" name="empresa" autocomplete="organization" required></div>
-        <div class="full"><label for="f-wa">WhatsApp</label><input id="f-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required></div>
+        <div><label for="f-wa">WhatsApp</label><input id="f-wa" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" required></div>
+        <div><label for="f-email">Correo</label><input id="f-email" name="email" type="email" inputmode="email" autocomplete="email" required></div>
         <fieldset class="full">
           <legend class="legend">Tipo de proyecto</legend>
           <div class="opts" role="radiogroup">
@@ -1038,6 +1039,35 @@ window.addEventListener('resize', syncFloating);
 window.addEventListener('load', syncFloating);
 syncFloating();
 
+// ---- sanity check: rejects keyboard-mash / nonsense in name, company, details, email (Spanish or English) ----
+window.lcCheck = function (d) {
+  const V = /[aeiouáéíóúüy]/i;
+  const junk = (v, min) => {
+    v = (v || '').trim(); if (v.length < min) return true;
+    if (/(.)\1{3,}/i.test(v)) return true;                                   // gggg, aaaa
+    if (/(asdf|sdfg|dfgh|fghj|ghjk|hjkl|qwer|wert|erty|zxcv|xcvb|cvbn|1234|ñlkj|lkjh)/i.test(v)) return true;
+    const words = v.toLowerCase().match(/[a-záéíóúüñ]+/g) || [];
+    if (!words.length && !/\d/.test(v)) return true;
+    for (const w of words) { if (w.length >= 5 && !V.test(w)) return true; if (/[^aeiouáéíóúüy\s]{6,}/i.test(w)) return true; }
+    return false;
+  };
+  if (junk(d.nombre, 2) || (d.nombre || '').trim().split(/\s+/)[0].length < 2) return {field: 'nombre', msg: 'Escribe tu nombre real para que Luis sepa con quién habla.'};
+  if (junk(d.empresa, 2)) return {field: 'empresa', msg: 'Escribe el nombre de tu marca o empresa.'};
+  const em = (d.email || '').trim().toLowerCase(), dom = em.split('@')[1] || '';
+  if (!/^[^\s@]+@[^\s@]+\.[a-z]{2,}$/i.test(em)) return {field: 'email', msg: 'Revisa tu correo (ej. nombre@marca.com).'};
+  const TYPO = {'gmial.com':'gmail.com','gmal.com':'gmail.com','gmai.com':'gmail.com','gmail.co':'gmail.com','gnail.com':'gmail.com','hotmial.com':'hotmail.com','hotmal.com':'hotmail.com','hotmail.co':'hotmail.com','outlok.com':'outlook.com','yaho.com':'yahoo.com','yahoo.com.mz':'yahoo.com.mx','icloud.co':'icloud.com'};
+  if (TYPO[dom]) return {field: 'email', msg: '¿Quisiste decir @' + TYPO[dom] + '? Revisa tu correo.'};
+  if (/(mailinator|guerrillamail|10minutemail|tempmail|temp-mail|yopmail|trashmail|sharklasers|getnada|dispostable|maildrop|throwaway)/.test(dom)) return {field: 'email', msg: 'Usa un correo permanente para recibir tu propuesta.'};
+  if (junk(em.split('@')[0], 2)) return {field: 'email', msg: 'Revisa tu correo (ej. nombre@marca.com).'};
+  if ((d.mensaje || '').trim() && junk(d.mensaje, 3)) return {field: 'mensaje', msg: 'Revisa los detalles del proyecto.'};
+  return null;
+};
+window.lcQuality = function (d) {
+  const dom = ((d.email || '').split('@')[1] || '').toLowerCase();
+  const free = /^(gmail|hotmail|outlook|live|yahoo|icloud|me|aol|protonmail|proton)\./.test(dom);
+  return {emailType: free ? 'personal' : 'empresa', lowBudget: d.presupuesto === 'Menos de $15,000' ? 'si' : 'no'};
+};
+
 // form (connect to GHL/CRM webhook before launch)
 const form = document.getElementById('leadForm');
 form.addEventListener('submit', e => {
@@ -1052,6 +1082,8 @@ form.addEventListener('submit', e => {
   });
   if (!ok) { form.querySelector('.err')?.scrollIntoView({behavior:'smooth', block:'center'}); return; }
   const fd = new FormData(form), d = Object.fromEntries(fd.entries());
+  const bad = window.lcCheck(d);
+  if (bad) { const f = form.querySelector(`[name="${bad.field}"]`); if (f) { f.classList.add('err'); f.closest('details')?.setAttribute('open', ''); f.scrollIntoView({behavior:'smooth', block:'center'}); } alert(bad.msg); return; }
   // fetch('GHL_WEBHOOK_URL', {method:'POST', headers:{'Content-Type':'application/json'}, body: JSON.stringify(d)});
   track('lead', {tipo: d.tipo, presupuesto: d.presupuesto});
   // Meta Pixel Lead event (uncomment with the Pixel above):
